@@ -6,13 +6,17 @@ Michael Yoshitaka ERLEWINE <mitcho@mitcho.com>
 
 The archive is organized into folders, corresponding to LingBuzz entry numbers and URLs. In each folder, there is a `index.html` page, which is a recently downloaded copy of the entry's HTML page, and each revision as a separate file (`v1.pdf`, `v2.pdf`, etc.). The archive does not contain any material which is not publicly available on the LingBuzz site.
 
+# [👉 Enter the archives 📚](https://github.com/mitcho/lingbuzzarchive/tree/archive)
+
+Technical detail: This is the `master` branch. The archives are on the [`archive` branch](https://github.com/mitcho/lingbuzzarchive/tree/archive).
+
 If you are glad this exists, you might also like my [LingBuzz RSS feed](https://github.com/mitcho/lingbuzzrss) and [twitter account](https://twitter.com/LingBuzz).
 
 # Q&A
 
 ## Will search engines link to the files in this archive?
 
-No. Search engines (should) respect [GitHub's `robots.txt` file](https://github.com/robots.txt) which disallows the crawling of files stored here. (Technical details: `master` branches on GitHub get crawled by search engines, which is why I put this in a branch called `archive`.)
+No. Search engines (should) respect [GitHub's `robots.txt` file](https://github.com/robots.txt) which disallows the crawling of files stored here. (Technical details: `master` branches on GitHub get crawled by search engines, which is why I put the archive in a branch called `archive`.)
 
 ## Can I download this entire archive?
 
