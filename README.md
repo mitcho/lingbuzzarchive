@@ -4,11 +4,15 @@ Michael Yoshitaka ERLEWINE <mitcho@mitcho.com>
 
 [LingBuzz](http://ling.auf.net/lingbuzz) is a manuscript and preprint repository for the field of linguistics and has become a valuable community resource. Citation of pre-publication manuscripts from LingBuzz occur with some regularity, often referring to the LingBuzz entry number. ([More on LingBuzz](http://ling.auf.net/buzzdocs/)) Unfortunately the LingBuzz server is sometimes inaccessible and there have been periods in the past where the server has been completely down for extended periods of time. This archive is meant as a public "backup" of these files.
 
-The archive is organized into folders, corresponding to LingBuzz entry numbers and URLs. In each folder, there is a `index.html` page, which is a recently downloaded copy of the entry's HTML page, and each revision as a separate file (`v1.pdf`, `v2.pdf`, etc.). The archive does not contain any material which is not publicly available on the LingBuzz site.
-
 # [👉 Enter the archives 📚](https://github.com/mitcho/lingbuzzarchive/tree/archive)
 
-Technical detail: This is the `master` branch. The archives are on the [`archive` branch](https://github.com/mitcho/lingbuzzarchive/tree/archive).
+The archive is organized into folders, corresponding to LingBuzz entry numbers and URLs. In each folder, there is a `index.html` page, which is a recently downloaded copy of the entry's HTML page, and each revision as a separate file (`v1.pdf`, `v2.pdf`, etc.). The archive does not contain any material which is not publicly available on the LingBuzz site.
+
+**Note:** GitHub will only show the first 1000 subdirectories, but you should be able to guess the URLs you need to access a higher ID number.
+
+(Technical detail: This is the `master` branch. The archives are on the [`archive` branch](https://github.com/mitcho/lingbuzzarchive/tree/archive).)
+
+--
 
 If you are glad this exists, you might also like my [LingBuzz RSS feed](https://github.com/mitcho/lingbuzzrss) and [twitter account](https://twitter.com/LingBuzz).
 
