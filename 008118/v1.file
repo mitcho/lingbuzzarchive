@@ -1,0 +1,438 @@
+\documentclass[twoside]{article}
+%\usepackage[utf8]{inputenc}
+%\usepackage[latin1]{inputenc}
+%\usepackage[cyr]{aeguill}
+%\usepackage[francais]{babel}
+\usepackage{setspace}
+%\include{SpectorMacros}
+%\usepackage{pict2e}acquaintance
+\usepackage{graphics}
+\usepackage{graphicx}
+\usepackage{qtree}
+%\usepackage{pslatex}
+\usepackage{natbib}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{latexsym, linguex}
+ \renewcommand{\firstrefdash}{}
+ \usepackage{amssymb}
+\usepackage[hang]{footmisc}
+\usepackage{ragged2e}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{tree-dvips}
+\usepackage{pstricks} \usepackage{pst-xkey} \usepackage{pst-jtree}
+%\addtolength{\oddsidemargin}{-.25in}
+%	\addtolength{\evensidemargin}{-.25in}
+%	\addtolength{\textwidth}{.50in}
+%
+%	\addtolength{\topmargin}{-.25in}
+%	\addtolength{\textheight}{.5in}
+\usepackage{fullpage}
+
+\usepackage{framed}
+
+\usepackage{underarrows}
+\usepackage{url}
+\usepackage{multicol}
+
+\usepackage[margin=1.5 in]{geometry}
+\usepackage[normalem]{ulem}
+%\usepackage[T1]{fontenc}
+%\usepackage{ae,aecompl}        
+\usepackage{tcolorbox}
+\usepackage{tabu}
+\usepackage{pifont}
+\usepackage{multirow}
+\usepackage{bold-extra}
+\usepackage{enumitem, kantlipsum}
+\usepackage{url}
+\usepackage[%xetex, 
+bookmarks, colorlinks, breaklinks]{hyperref} % PDF setup - set your name and the title of the document to be incorporated into the final PDF file meta-information
+\hypersetup{linkcolor=blue,citecolor=blue,filecolor=black,urlcolor=MidnightBlue} % Link colors
+\usepackage{bibentry}
+\usepackage{skull}
+\usepackage{enumitem}
+\usepackage{tabto}
+\usepackage{underarrows}
+
+%%For notes in tables
+\usepackage[flushleft]{threeparttable}
+
+\usepackage{stmaryrd}
+%$\llbracket a+b\rrbracket$
+
+\headsep= 17pt
+
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+%\fancyhead[LE]{Control}
+%\fancyhead[RE]{Basics}
+\fancyfoot[C]{\thepage}
+%\fancyhead[LE]{{\sc $\skull$ draft $\skull$}  \date}
+%\fancyhead[RE]{{\sc $\skull$ comments welcome $\skull$ }}
+\fancyhead[LO]{ {\it } \date}
+\fancyhead[RO]{Dominique Sportiche }
+\renewcommand{\headrulewidth}{1pt}
+
+
+
+\title{One {\sc self} only\thanks{Thanks to Ad Neeleman,
+an anonymous NELS 53 reviewer,
+Barry Schein, 
+Byron Ahn,
+Cecilia Poletto, 
+Danny Fox, David Adger, Dylan Bumford, Edward Keenan, 
+Emanuela Sanfelici, 
+Guglielmo Cinque, 
+Julie Legate,
+Ken Safir, 
+Klaus Abels, 
+Margherita Pallottino,
+Maria Kouneli, 
+Martin Prinzhorn, 
+Massimo Piatelli-Palmarini, Noam Chomsky,  Pranav Anand, 
+Richard Stockwell, 
+Roumyana Pancheva,  Simon Charlow, 
+Stefan Keine, 
+Tim Hunter, 
+Tim Stowell,  Travis Major, 
+Ur Shlonsky, Vincent Homer, Viola Schmitt, Yael Sharvit, 
+Yasutada Sudo, and to 
+ the audiences at  USC,  
+ Universit\"at Leipzig, University of Arizona Tucson, Universit\'e de Gen\`eve, Universit\`a degli Studi di Padova, University College London, the UCLA 
+Syntax and Semantics seminar and NELS 53. }
+}%
+\author{Isabelle Charnavel \& Dominique Sportiche\\
+Universit\'e de Gen\`eve, UCLA}
+
+\begin{document}
+
+\maketitle									 % Please don't delete these four commands.
+\raggedbottom
+\renewcommand{\firstrefdash}{}
+\renewcommand{\secondrefdash}{}
+
+\setlength{\Extopsep}{\baselineskip}     % This command is used with the linguex package. 
+												 % It makes a line skip separating a main example from surrounding text.
+												 % You don't need to copy and paste it before/after your examples.
+												 % It does its work nicely by staying here quietly.
+
+% The code below takes care of the header of you paper.
+\markboth{Charnavel \& Sportiche}{One {\sc self} only}
+
+% If your paper is single-authored:
+% 		include your first and last name
+% Else (multi-authored):
+% 		include ONLY the last names (like the one we have above)
+
+% Please use sentence capitalization for the title header.
+% If your title is longer than 50 characters (spaces included), please use a shortened version in the title header.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%% Main text starts here %%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%% Introduction %%%%%
+
+\setlength{\Exlabelsep}{.25em}%
+\setlength{\SubExleftmargin}{1em}%
+\setlength{\Exindent}{0pt}%
+\setlength{\Exlabelwidth}{1.7em}%
+\begin{abstract} 
+\noindent 
+English or French self-forms ({\it her-self / elle-m\^eme}) can be anaphors (and logophors) or intensifiers, a common crosslinguistic synchronic pattern (\citealp{gast2006rethinking}), with well documented cases of diachronic genesis (\citealp{konig-siemund:2005}) suggesting that this pattern is non-accidental. In addition, English {\it self} and cognates in other languages (but not French {\it m\^eme}) can be prefixed to predicates (e.g., {\it self-immolate}) with correlated interpretive effects.
+Chomsky's 1986 binding theory or \cite{Charnavel2016} fails to explain why anaphors are anaphors, why e.g. there is a condition A they are subject to, and does not address the relation between reflexives and intensifiers. Alternatives (\citealp{cresswell1973logics}, \citealp{Reuland:2011}, \citealp{lechner:2012}, \citealp{sauerland2013presuppositions}, \citealp{mckillen2016interpretation}) do try to address some of these questions but are unsatisfactory: some shortcomings are discussed in \citealp{sportiche:2022}.
+Unlike most previous work (but like \citealp{Browning:1993}, e.g.), we start from the requirement that a single lexical entry for {\it self} is to be postulated that organically explains the dual use of self-forms as reflexives and as intensifiers, and all their properties: we propose a lexical entry for {\it self/m\^eme}, attempting, in interaction with independent principles, to derive (i) why self forms like herself are anaphoric (or logophoric) reflexives, (ii) why they are subject to Condition A of the Binding Theory, (iii) why the reflexive interpretations of self predicates and of pronominal reflexives systematically differ, particularly in attitudes contexts, (iv) why they are used as intensifiers, (v) why qua intensifiers, they display particular distributional restrictions and interpretations (cf. e.g. \citealp{Eckardt:2001}, \citealp{gast2006grammar}, \citealp{ahn:2010}).
+The central idea is that self is a binary predicate with two arguments $\alpha$ and the pronoun $\beta$, and, as standard, a (quasi) identity function on its first argument $(self(\beta)\approx\beta)$. Relativizing $\alpha$ yields intensification; Moving it to a $\theta$ position yields reflexivization.\\
+In principle, this analysis extends to a wide variety of languages displaying the same homophony, and provides natural grounds for treating "Case Copying Reflexives"   found in languages like Malayam or Telugu (see  \citealp{Jayaseelan:1996}, \citealp{messick-ragotham:2024})
+\end{abstract}
+%\bibliography{/Users/ds/Cloud/OneDrive/Latex/texmf/bibtex/master}
+\newpage
+\section{Preamble}
+
+This article (minus the abstract and this preamble) appeared in the Proceedings of the Fifty-Third Annual Meeting of the North East Linguistic Society (NELS 53). The examples have the same numbering as the NELS proceeding versions but the page numbers are different. Due to page limitations, we  present the gist of the proposal is presented, at the cost of simplifying the presentation (see in particular footnote 7). In addition, many issues that should be discussed are not. Some are discussed in \cite{charnavelsportiche:2021a} and \cite{charnavelsportiche:2022},  as well as in \cite{sportiche:2024b}. Hopefully, \cite{charnavel-sportiche:2023b} will fill in the remaining gaps.
+
+ 
+\section{Introduction}
+
+
+The apparently same item { {\it self}}, w/ or w/o a pronoun {{\it it, her}}, displays a range of behaviors:\footnote{We can only discuss some cases here, and only English (but everything about pronoun-{\it self} extends at least to French pronoun-{\it m\^eme}).}
+
+\ex. \a. This magnet {\bf itself} attracts particles of plastic. \hfill{\it Intensifying} 
+\b.  This magnet attracts particles of plastic to {\bf  itself} \hfill{\it Anaphoric}
+\b. Mary asked why the rain had damaged Bill's portrait of {\bf herself}. \hfill{\it Logophoric}
+\b.  {\it self-predicates}
+\a. He {\bf self} identifies as Scottish (= identifies himself as Scottish). \hfill{\it  Reflexive }
+\b. She  {\bf self} financed her campaign (financed it herself). \hfill{ Intensifying}
+\b. {  {\bf self}-produced concert\\ =  concert produced by (one) oneself} \hfill{\it Reflexive and/or  intensifying }
+
+There are good (and usually well recognized) reasons to want a unified account (from \citealt{Browning:1993} on), that is a unique lexical item {\it self} underlying all these behaviors:\\
+First, there is widespread crosslinguistic homophony between anaphors and logophors, as well as between them and intensifiers as documented e.g., in \citealt{gast2006rethinking} which needs to be explained (cf., the anti-homophony (learning) principle, \citealt[p. 84]{Johns:1992}, \citealt[p. 156]{embick:2003}, \citealt[p. 137]{kayne:2019}).\\
+Second, there are well documented historical changes in English (cf. \citealt{keenan:1994},\\  \citealt{konig2000development}, \citealt{van2000history}, \citealt{keenan2002explaining}) demonstrating a natural path from the intensifying use to the reflexive use. This is plausibly the case as well with French {\it lui-m\^eme} and elsewhere.\\
+Third, there is a natural path in the other direction  {\it reflexive $\rightarrow$ intensifier}  has been argued to exist as well for the Semitic reflexive {\it nafs-} in Arabic and Aramaic in  \citealt{bassel:2022}).\\
+Fourth, as discussed in  \cite{charnavelsportiche:2021a}, the same range of behaviors is found with items unrelated to {\it self}, and  in different languages. Thus, without any structural ambiguities, English {\it its own}  or French {\it son propre}/ lit. {\it its proper} also both behave\\ 
+(i) anaphorically as in:  {\it the moon triggers its own tides}\\
+(ii) logophorically as in {\it Sue thinks they stole her own purse} (cf. \citealt{charnavel2012her}) and \\
+(iii) as intensifiers as in: {\it  Sue tied her own shoes} (cf. \citealt{charnavel2012her})\\ 
+with the same range of readings as {\it self} intensifiers.
+
+We thus view as main analytical challenge the postulation a single lexical entry for  { {\it self}} that accounts for this range of behaviors and derive their properties.
+
+
+\section{Some basic properties to account for}\label{section2}
+
+Regarding English expressions of the form pronoun-{\it self}, we minimally would like to derive the following properties:\footnote{In this short paper, we will outline the analysis of the logophoric usage without justification but we would follow  \citealt{Charnavel:2019LL}, \citealt{Charnavel:2019LIappeared} in taking it to be a subcase of the anaphoric usage.}
+\begin{itemize}[noitemsep]
+\item {\bf Anaphoricity/Intensification}: why there is anaphoricity, logophoricity, or intensification when there is.
+\item {\bf Condition A}: why qua anaphors they must have an A-binder, in a local domain.
+\item {\bf Exhaustive Binding}: why qua anaphors, they must be exhaustively syntactically bound by their antecedents (no split or partial antecedence).
+\item Why qua anaphors, they allow both {\bf strict} and sloppy readings  in ellipsis and focus constructions (cf. \citealt{mckillen2016interpretation}, \citealt{charnavelsportiche:2022})
+\item Why they can  asymmetrically\footnote{We take the putative counterexamples to the reported asymmetricity in \citealt{reuland2009binding} to illustrate not proxy cases but  the {\it de re/de dicto} distinction.} be used as {\bf proxies}  qua anaphors (\citealt{Jackendoff:1992} 's Madame Tussaud  examples) but not qua intensifiers.
+\ex. Ringo$^m$ fell on  himself$^q$ \label{proxy} \hfill{\checkmark m=person \& q= wax statue; *m= statue \& q= person}
+
+\end{itemize}
+
+Similarly,  we minimally would like to derive the following properties of {\it self} predicates:
+\begin{itemize}[noitemsep]
+\item  They display {\bf reflexive or intensified readings} 
+\item They disallow {\bf proxy readings.}
+\item They tolerate {\bf sloppy readings only} in ellipsis or focus constructions (cf.,  \citealt{charnavelsportiche:2022} for more details).
+\end{itemize}
+
+
+\section{Analysis of pronoun-{\it self}}
+
+We will proceed as follows.
+We will start from \citealt{Eckardt:2001}'s analysis of intensifying {\it selbst/selber} in German, adapt it to English {\it { {\bf it}}self}, extend it to account for anaphoric {\it it self} and extend it to {\it self} predicates. The reason we adopt this strategy is that fundamentally, there is only one current,  analysis of adnominal intensifiers (with some variations, e.g.,  \citealt{hole2002agentive},  \citealt{gast2006grammar}), represented e.g., by  \citealt{Eckardt:2001}'s analysis of  {\it  selbst/selber} in German. 
+But there are several quite different analyses of reflexives qua anaphors with many versions of each, for example, non exhaustively:
+\citealt{cresswell1973logics},  \citealt{bach1980anaphora},   \citealt{Lebeaux:1983},
+  \citealt{chomsky:1986b}, 
+  \citealt{keenan1987unreducible},
+    \citealt{levinson1991pragmatic}, 
+\citealt{Reinhart:1993b},  \citealt{Jayaseelan:1996}, \citealt{Reuland:2001}, \citealt{Kayne:2002}, \citealt{schlenker2005non}, \citealt{gast2006grammar},   
+\citealt{heinat2008probes},  \citealt{hicks2009derivation}, \citealt{spathas:2010},  \citealt{Reuland:2011}, 
+\citealt{rooryck2011dissolving}, 
+  \citealt*{drummond2011minimalist}, 
+ \citealt{lechner:2012}, 
+ \citealt{sauerland2013presuppositions}, \citealt{patel2013principle},   \citealt{ahn:2015},  \citealt{Charnavel2016},  \citealt{mckillen2016interpretation}, \citealt{dechaine-wiltschko:2017}.
+
+Adopting a unified view of the lexical entry {\it self}, the consensus on adnominal intensifiers substantially narrows down what is acceptable as analysis for other intensifying usages of {\it self} as well as  for reflexives qua anaphors and other instances of {\it self}.\\
+
+\noindent {\bf \citeauthor{Eckardt:2001}'s analysis of intensification in a nutshell.}
+Consider the following sentence:
+ \exg.  Karl selbst ist gekommen \label{karl}\\
+Karl self is come\\
+Karl himself came
+
+\citeauthor{Eckardt:2001}'s proposes to analyze {\it selbst} (or {\it selber}) as the identity function ID:\\ 
+\indent $\forall \alpha  \in D_e, \, selbst(\alpha)= ID(\alpha)=\alpha$ $\rightarrow$  [[Karl selbst]] = [[Karl]]\\
+As a result, the semantic contribution of {\it selbst} is vacuous {\bf unless} {\it selbst} is focused as in:   {\it (i) Karl {\sc selbst} ist gekommen}. Accent on {\it selbst} triggers a {\bf focus meaning}: alternatives to the focused element that are contrasted with it. An alternative to {\it selbst} is some  function of {\bf non} identity (the choice of which is contextually determined). With focal accent on {\it selbst}, the resulting meaning is: Karl and not people different - in some relevant way -  from Karl  came, (or Karl in addition to people different  - in some relevant way - from Karl came). 
+We will not further discuss intensification here. Previous authors all assume that to account for the full range of data, more than one lexical entry for {\it selb} is needed, failing to meet the unification challenge we stated. We refer the reader to  \cite{charnavelsportiche:2021a} which does defend a unified analysis of all intensifying uses.\\
+
+Now English works the same, except for the presence of a pronoun: {\bf her} in  {\bf herself}.  
+
+ \ex.   {\bf Leila herself} came / {\bf Leila selbst} ist gekommen
+
+To adapt this analysis to English, we 
+need to treat English {\it herself} like German {\it selbst}, that is as an identity function: [[Leila herself]] = [[Leila]]. 
+In addition, English {\it self} and German {\it  selbst} are cognate, they both appear in {\it self} predicates with similar results (e.g., {\it self knowledge/Selbst erkenntnis}). It is thus desirable to {\bf also} take {\it self} as an identity function. \\
+
+\noindent {\bf Proposal:  Lexical Entry for (modern) English {\it self}} (a noun, as shown by the paradigm {\it self, selves}): we capitalize on the fact that elements such as German {\it  selb}, French {\it m\^eme}, and historically at least English {\it self}, all mean `same', which takes {\bf two} arguments and is the identity function on its first argument.\footnote{It is in fact a near identity function allowing an asymmetric proxy relation, see page \pageref{proxy1}.} Intuitively, {\it (i) this is the same as that} roughly means  this and that are instances of the same thing, `this is that',  where `same as that' (roughly) means `that'. \\
+Assume for now that, just like adjectives of identity, the noun {\it self} is introduced with two arguments in a small clause as below, with the NP  used predicatively:\footnote{As {\it self} asserts referential covaluation between {\it Leila} and {\it her}, no condition B or C is triggered in \ref{2arg} since these conditions only exclude {\it presupposed} covaluation, see e.g., \citealt{Buring:2005b}.}$^,$\footnote{Given that [[herself]]=[[her]], it is not necessary to use {\it herself} predicatively to yield the intensifying reading. But if the 2$^{nd}$  argument could be absent, why {\it herself} would ever require an antecedent would remain mysterious. The historical change in English could be analyzed as requiring the 2$^{nd}$ argument in \ref{2arg}.}
+ \ex. \label{2arg} {\it [$_{{ {\bf SC}}}$ \hspace{.2em} Leila$_{2^{nd} arg.}$ [$_{NP}$ self  her$_{1^{st} arg.}$  ]]}  \hfill{meaning: {\it Leila is self(her) = Leila is her}}
+  
+
+ 
+where {\it self} is the identity function on its first argument:  $sel\!f(\alpha)=ID(\alpha)=\alpha$.
+ 
+\noindent Turn now to a short sketch of how intensification arises (see \citealt{charnavelsportiche:2021a} for more details).  
+ 
+\noindent To obtain the standard derived structure for intensified DPs shown in \ref{tree1} from the small clause in \ref{SC}, the two DPs, DP* and DP** must be built. How is illustrated in \ref{tree4} below.
+\begin{multicols}{2}
+{\small \ex. \Tree   [.DP** [.DP Leila ]   \qroof{her self ...}.DP*  ] \label{tree1}
+
+}
+\ex. 
+{ [$_{{ {\bf SC}}}$ \hspace{.2em} Leila [$_{NP}$ self her ]]}  \label{SC}
+
+\qtreecenterfalse
+{\small
+\ex. \label{tree4} \Tree   [.DP** [.DP$_k$ \node{subj1}Leila$_k$  ]  [.DP*  \node{subj3}{}her$_m$  
+[.{SC}  \sout{\node{subj4}Leila}$_k$   \qroof{self \sout{\node{subj2}{} her}}$_m$.NP ]]]  
+\anodecurve[bl]{subj4}[bl]{subj1}{0.4in}
+\anodecurve[bl]{subj2}[bl]{subj3}{0.4in}
+
+}
+\end{multicols}
+
+ 
+ DP* 
+can be  built from \ref{2arg} in various ways, e.g., as  in \ref{tree4};\footnote{Different ways are exploited in different  languages or  structures, e.g., \ref{tree4}, \ref{tree3}, \ref{322} or \ref{3221}, without affecting the logic of our proposal for reasons space prevents us from discussing here (e.g. the base order of arguments in \ref{2arg} in the end does not matter). The way shown in \ref{tree4} illustrates just one option. \label{fnDP*}}
+Next the  
+subject of SC is relativized, yielding DP**. 
+Note that double relativization is possible (as there is no islandhood for small clauses relatives, cf.,  \citealt{kayne:2010}). 
+The meaning derived is  
+`Leila, her who Leila is'  which is redundant as desired.\\
+
+\noindent {\bf English {\it self} anaphora}: Given the way {\it self} is first merged, we want to derive the structure in \ref{tree2} from the structure in \ref{SC2}. The 2$^{nd}$ argument of {\it self} in DP* is not visible from outside of it. It couldn't be a silent pronoun such as {\it PRO} or {\it pro} as subject or object of {\it self}: {\it pro} needs to be identified (cf., \citealt{Rizzi:1986b}) and Case licensed but would not be; {\it  PRO} cannot be an object, and is not licensed in small clause relatives, viz. {\it (i) \checkmark a man [ t fond of Bill], (ii)* a man [ PRO fond of t ]}. This silent argument can thus only be a trace, as shown in \ref{tree3}.
+
+ \begin{multicols}{2}
+{\small
+\ex. \Tree   [.VP [.DP Leila ]   [kick \qroof{[$_{DP}$ her  ]  self ...}.DP*  ] ]  \label{tree2}
+
+}\ex. 
+ [$_{{ {\bf SC}}}$ \hspace{.2em}Leila [$_{NP}$  [$_N$ self ] her ]] \label{SC2}
+ 
+\qtreecenterfalse
+{\small
+\ex. \label {tree3} \Tree   [.VP [.DP$_k$ \node{subj1}Leila$_k$ ]  [. kick [.DP*  \node{subj3}{}her$_m$  [.{ SC}  \sout{\node{subj2}Leila}$_k$   \qroof{ self \sout{{\node{subj4}{} her}}$_m$}.NP ]  ] ] ] 
+\anodecurve[bl]{subj2}[bl]{subj1}{0.4in}
+\anodecurve[bl]{subj4}[bl]{subj3}{0.4in}
+
+}
+\end{multicols}
+ 
+\noindent In \ref{tree3}, DP* is built as it is in \ref{tree4}.
+But {\it Leila} is remerged in a $\theta$ position as subject of {\it kick}. 
+And the meaning derived is `Leila kicked her who Leila is ' = `Leila kicked Leila'.\\
+
+\noindent {\bf Deriving some basic properties of X-self}: We are now in a position to derive some properties of pronoun-{\it self} listed in section \ref{section2}. We postulated the following structures:
+\ex. \a. Leila her self =  \linkto {\bf Leila$_k$} \under [$_{DP*}$   her   [(who) \from {\bf \sout{Leila}$_k$} (is) self ] ]  \label{12a} \hfill{\it Intensification} 
+\b. Leila kick herself =  \linkto {\bf Leila$_k$} \under [  kick [$_{DP*}$   her   [(who) \from {\bf \sout{Leila}$_k$}   (is) self ] ] ] \label{12c} \hfill{\it Anaphoricity}  
+  
+\vspace{-1em}
+Why are these reflexives anaphoric or intensifying when they are?\\
+Note first that there are in fact no anaphors or intensifiers here: just coarguments of {\it self} (with different movement options for its second argument). We already discussed how  such adnominal reflexive structures as \ref{tree1} or \ref{12a}  yield the intensified meaning. On page \pageref{agent2}, we will briefly discuss cases of adverbial intensification relevant to the present article. A fuller discussion is found in \cite{charnavelsportiche:2021a}. \\
+Turning now to anaphoric reflexives, derived as in \ref{tree3} or \ref{12c},  the apparent binding property and locality of the {\it Leila/herself} relation is just the binding property and locality of the relation between {\it Leila}  and its trace: it arises from A-movement of {\it Leila} binding its trace and moved away from {\it her}, where locality is A-movement locality (cf., point 2 page \pageref{loc}).\\
+From this also follows why reflexives must be exhaustively syntactically bound by their antecedents (no split or partial antecedence). Exhaustivity means {\it Leila=her}: this arises as a byproduct of  the requisite identity between {\it Leila} and {\it her}  asserted by {\it self}.\\
+Why are both strict and sloppy identity allowed in ellipsis and focus constructions with anaphoric reflexives? First, recall that movement involves a single syntactic object M merged in different positions yielding several occurrences  of M, m$_1$, m$_2$, ... , m$_n$ (m$_2$, ... , m$_n$ traces of $m_1$). Typically, only $m_1$ is overt as is the case here. Prosodically marking $m_1$ can be interpreted in two distinct ways: it can either be just that,  focus on m$_1$, or it can be focus on the syntactic object M, that is simultaneous focus on all occurrences.\footnote{\label{focfoc} This is independently required. Else {\it Only men are \sout{men} here}, would be trivially true, denying that non men are men that are here, instead of the non trivial denial of `non men are not {\it non men} that are here'. In more complex movement cases, focus on the object M can yield alternatives only on the subset of the m$_i$'s  that are not given, see e.g., \ref{141} and footnote \ref{fn141}.}  
+\label{FOCUSALT} These two options create two distinct types of focal alternatives: alternatives to just m$_1$, or alternatives to M. In a `standard'  A-movement case, as in \ref{13a}, the former option is excluded: alternatives to just the occurrence {\it Leila} in subject position makes it not linked to a $\theta$-position so {\it Lydia} is not licensed. But in \ref{1313}, both options survive as shown in \ref{13b} and \ref{13c}: 
+\ex. \a. Leila seems to have \sout{Leila} left before Lydia did (*seem to have {\bf Leila} left) \label{13a}
+\b. \linkto Leila$_k$ \under kicked herself \from \sout{Leila$_k$}... \label{1313}
+\b. before [Lydia$_m$ did {\it (kick herself Leila$_k$)}] \label{13b}\hfill{focus on occurrence {\it Lydia}: strict reading} 
+\b. before [Lydia$_m$ did {\it (kick herself Lydia$_m$)}] \label{13c}\hfill{focus on object {\it Lydia}: sloppy reading}
+
+Finally, why can reflexives be (asymmetrically) used as proxies  qua anaphors as illustrated in \ref{proxy} but not qua intensifiers? In an intensifying structure like \ref{tree1}, DP* as adjunct to DP means that DP* is a property of, or has the same denotation as that of, DP: here this means that there is a double relation (which leads to redundancy): the {\it self} relation between {\it Leila} and {\it her}, and the identity relation between {\it Leila}  and DP*= {\it her that Leila is}. {\it Her} cannot pick out any other object than Leila, else this second relation does not obtain (in {\it Leila the statue}, {\it Leila} simply cannot denote the person). With anaphoric reflexives, the situation is different: the only relation is the {\it self} relation between {\it Leila} and {\it her}.
+
+To allow for proxy readings, {\it self} must be defined so that: Ringo (the person) is the self of his statue, but not vice versa. So  {\it self} (or {\it m\^eme} in French) is more precisely taken to be a particular property of an individual unique to this individual (the set denoted by {\it self(x)} is the singleton \{x\}) so uniquely identifying her. In English, such a property is denoted by the noun {\bf self} (as in {\it his younger self} cf., {\it looking at this old picture, they did not recognize his younger self}). 
+Now the following examples outline the fact that  `the self' of a wax figure can be uniquely identifying (representing) itself or a person, but `the self' of a person cannot be uniquely identifying (representing) a wax figure, hence yielding the asymmetric availability of proxy readings:\footnote{Note that the non predicative use of the noun {\it self} does not give rise to anaphoricity, cf. lack of c-command in the text example or in \ref{proxy1}. This use  is somewhat restricted in poorly understood ways.}
+ \ex. \a. \checkmark Ringo$_k$ 's daughter  (the person) does look like his$_k$ younger (wax) self \label{proxy1}.
+ \b.  {}* Ringo's face (the statue's) no longer  looks like his older (flesh and blood) self's. \label{proxy2}
+
+
+
+\paragraph{Logophoric  X-{\it self}:}  Space limitations prevent us from discussing this use in any detail but the logic of how this proposal applies can be illustrated. 
+\ex. \label{logoph} \a. Leila thinks that Charles complains too much about herself. 
+\b. Leila$_k$  thinks that [\linkto { pro$_k$} \under LOG [Charles complains too much about [ herself \from { t$_k$} ]]]
+
+As in the plain reflexive case,  the second argument of {\it self} noted {\it pro} here, moves to the subject position of the logophoric operator LOG  cf.,  \citealp{Charnavel:2019LL}, \citealp{Charnavel:2019LIappeared} (lexically realized as a {\it say} complementizer in some languages, \citealt{Erbasi:2022}) within its phase, here TP to simplify (see also \citealt{bryant:toappear}, \citealt{charnavel-bryant:2022appeared}).
+
+
+\section{Analysis of bare {\it self}}
+
+Bare {\it self} occurs preceding verbs, nouns and adjectives. It can clearly induce a reflexive readings as in \ref{self1} or an intensifying reading as in \ref{self2} and either or both as in \ref{self3}:
+\ex. \a. {\it Reflexive}\\ Originalism is self refuting (refutes itself); John will self evaluate (evaluate himself); self confident (confident in oneself),  self deprecating (deprecating oneself), self evident (evident in itself). \label{self1}
+\b.  {\it Intensifying}\\
+Nobody self reported himself; This billionaire self funded his campaigns; Nations now self insure the oil tankers they acquire \label{self2}
+\b. {\it Either or Both} \label{self3}\\
+A self produced concert  (a concert produced by ({\bf one}) oneself), self administered exam (exam administered by ({\bf one}) oneself), self financed campaign (campaign financed by ({\bf one}) oneself)
+
+Precisely analyzing examples in \ref{self2} and \ref{self3} would require a full discussion of intensifying and of logophoric pronoun-{\it self} combinations. We briefly discuss only \ref{self1} here. \\  
+
+\noindent {\bf A preliminary:} {\it self} `incorporation' is not always, hence by Ockham's razor never is, a lexical operation: it is syntactic. The fundamental reason is that lexical operations can only manipulate properties of a single lexical items. Yet:\\
+(i) The reflexive relation need not be between lexical co-arguments of a  predicate as in:
+{\it  a self proclaimed king} (= one who proclaimed [himself king], or perhaps, one who was proclaimed king by himself), with one argument of {\it king}, one of {\it proclaim}.\\
+(ii) The intensifier {\it self} bears no relation to the predicate's lexical properties as in \ref{self2}.\\
+
+\noindent {\bf Reflexive bare {\it self}}:  The  analysis of these cases involves the  same derivation as phrasal {\it self} reflexives except that bare {\it self} takes, instead of an overt pronoun, a silent argument $\beta$ (whose nature we will specify further). Given that the other argument moves, {\it self} ends up with two silent arguments  which licenses (only bare nouns do it) and requires (English does not tolerate singular bare N objects) {\it self} `incorporation' (see point 4 page \pageref{incorp}):
+
+\ex. \linkto Eli$_k$ \under will  [self  [$_{VP}$ \from t \hspace{-.2em}\linkto $_k$  \under immolate [[ ...  [\from t$_k$ \sout{self { $\beta$}} ]] ]]] \label{bself} \hspace{3em}{with { $\beta$} silent}
+
+This analysis accounts for some of the  properties of  {\it self} predicates: They yield reflexive readings the same way the non bare cases do. But this does not account for why they disallow proxy readings, and why they only tolerate sloppy readings in ellipsis or focus constructions. To limit the hypothesis space further, we first make a detour.\\
+
+\noindent {\bf Reflexivization under attitudes} (more detail in \citealt{sportiche:2022}):
+Inspired by observations made in \citealt{Heim:1994}, consider the following examples in the given scenario:
+\ex. \label{elie} Context: {\it Eli, the high priest wants to placate the gods by sacrificing a member of the community. He says: I want to immolate the oldest member of the community, who he does not realize is him! But I know it's him.} I can truly report (a) but not (b):
+\a. Eli wants to immolate himself!  \hfill{\bf true report} \label{elie1}
+\b. Eli wants to self immolate!  \hfill{\bf false report} \label{elie2}
+
+Example \ref{elie1} has the approximate structure {\it Eli wants [PRO to immolate himself]} and its meaning can be roughly paraphrased by:\\
+\indent  {\it What Eli wants (in his words): `I will immolate someone' (not `I will immolate myself')}. \\ 
+In this scenario, coreference {\it PRO/himself} is interpreted  {\it de re} non {\it de dicto}, and  
+this  is expected:  the identity is between the two DPs argument of {\it self}, here {\it him} and {\it PRO}; they may be covalued in some worlds but not in others (see \citealt{sportiche:2022BindRel} for further discussion of these questions). So for example, sentence \ref{kairouan} is felicitous in the context provided, even though John is unaware that this boat is the boat that Sue took last year:
+\ex. Context: {\it John who knows nothing about Sue's  last year trip points to a boat and says: Ah! I think this boat is the Kairouan. Turns out the Kairouan is the boat Sue took last year, which I know. I can report:}\\
+John thinks that this boat is the (same) boat Sue took last year \label{kairouan}
+
+
+\noindent Unlike \ref{elie1}, \ref{elie2} has the approximate structure {\it Eli wants [PRO to self immolate t]} and its meaning can be roughly paraphrased by:\\
+ \indent {\it What Eli wants (in his words): `I will immolate myself'}. \\ 
+In the given scenario, coreference  between the two arguments of {\it immolate} must be interpreted {\it de dicto}.
+To account for this, these two arguments cannot be two distinct DPs. One option would be to claim that {\it self immolate} takes only one argument (namely {\it PRO}), but this would be at least inconsistent with the lexical entry we motivated for {\it self} (it needs two arguments to induce reflexivization), and faces further problems (see again \citealt{sportiche:2022} for why). The other option is that there are two DPs, but they are covalued in all worlds: the only way  to achieve this result is to suppose that they are  two occurrences of the same DP, that is in a movement relationship. Being occurrences  of the same syntactic object, a single DP, the  two arguments of {\it self} would have to have the same denotation in all worlds.\footnote{This is not to say that all occurrences must be interpreted in completely identical ways. They typically are assumed not to, traces undergoing trace conversion  for example as in \citealt{Fox:1999}. \label{fntrace}} 
+
+This is what we adopt. Assuming that the two arguments of {\it self} are in a movement relationship, in \ref{bself}, $\beta$ is the trace of {\it Eli}, yielding:
+ 
+\ex. \linkto Eli$_k$ \under will  [$_{VP}$ \from t \hspace{-.2em}\linkto $_k^1$  \under immolate [ [ ...  [\from t \hspace{-.2em}\linkto $_k^2$ \under \sout{self} \from {t$_k^3$} ]]]]   \label{32} \hfill{{\it self} `incorporation' not shown; see \ref{322}}
+
+This immediately derives  why covaluation must be read {\it de dicto} (as well as {\it de re} if the DP has a {\it de re} denotation); It also derives why they disallow proxy readings since the two arguments of {\it self} must pick out exactly the same object.
+  
+To derive why bare {\it self} predicates must give rise to sloppy identity in ellipsis or focus constructions, we need to be more specific about incorporation, which we can only sketch below in \ref{322} (in way that does not affect the conclusion regarding {\it de dicto} readings). Note that English disallows object incorporation (N to V) so the derivation in \ref{32} cannot involve standard object incorporation into V.  
+ 
+\paragraph{Intensifying bare {\it self}:} Return now to such examples as:
+\ex.This billionaire has self funded his campaigns. \label{bself}
+
+A full discussion of such cases requires a very detailed discussion of the intensifying use of {\it herself}, which we can only barely sketch here.\\
+First, the interpretation of {\it self} in \ref{bself} could either be that of an adnominal \ref{inadn} or of an adverbial \ref{inadv} (so-called anti delegative or anti assistive) intensifier case.
+\ex.  \a. {\#} This billionaire himself has funded his campaigns. \label{inadn}
+\b.  $\checkmark$ This billionaire has funded his campaigns himself. \label{inadv}
+
+Only the latter is an appropriate paraphrase of \ref{bself}, showing that we are dealing with an adverbial intensifier and {\it self} is an `incorporated' adverbial intensifier and shows the same ambiguity: 
+\ref{inadv} has two readings (John acted so that no one else funded his campaign - the {\it anti delegative} reading- and no one else acted so that John funded his campaign - the {\it anti assistive} reading). For example, following  \cite{charnavelsportiche:2021a} (to which we refer the reader for  a more elaborate discussion), the  {\it anti-assistive} reading is analyzed as having the structure shown in \ref{agent2} (with {\sc do} a silent verb roughly meaning `act'): 
+\ex. Where did Tim find the money to fund his campaign? Tim funded it himself. \label{agent2}\\
+\label{141} [[$_{VP_3}$ \linkto{\bf{Tim$^1$}}$_F$  \under{{\sc do} [$_{VP_2}$} \from{\sout{T}} \hspace{-.3em}\linkto{\sout{im$^2$}}
+\under{v [$_{VP_1}$ [fund it] [$_{DP}$} \from{\sout{Tim$^3$}} him{\sc self...}$_F$]]]$_{FOC}$ $\sim$ C]
+
+In this context, it is given that Tim funded his campaign. What is asserted is that nobody else acted so that Tim funded it. Focus is on {\it self} and (by focus projection) on VP$_3$, with only  Tim$^1$ and Tim$^3$ (and {\sc self} and {\it him}) alternating since everything else in VP$_3$ is given.\footnote{The mechanism by which alternatives are computed here is focus projection. Focus is on {\sc self} and can project up to VP$_3$, with anything not given alternating (and denied). Sensical alternatives here are of the form:  Bill acted so that Tim funded his campaign, Bill him who Tim is not. The anti delegative reading is similarly derived, the focus projecting up to VP$_2$, in contexts where its content is given except for Tim$^2$. \label{fn141}}\\
+Bare {\it self} is analyzed exactly in the same way but with two movement related arguments as discussed above for reflexive {\it self} and `incorporation' of {\it self} (not shown here: see \ref{322})).
+\ex. How was Tim's campaign funded? Tim {\sc self}-funded it. \label{agent1}\\
+\label{142} \linkto{Tim} \under... [[$_{VP_3}$ \from{\sout{T}} \hspace{-.2em}\linkto{\sout{im}} \under{{\sc do} [$_{VP_2}$}  \from{\sout{T}} \hspace{-.2em}\linkto{\sout{im}}$_F$ \under{v [$_{VP_1}$ [fund it] [$_{DP}$} self \from{\sout{Tim}} $_F$]]]$_{FOC}$ $\sim$ C]
+
+\section{Some of what remains to discuss}
+Our primary goal is to explain why {\it self} consistently has the variety of uses, properties and meaning contributions that it has. This is a minimal  analytical requirement any explanatory theory must meet. The present analysis is meant to meet this requirement and can readily extend to a variety of languages using an equivalent of {\it self} (pronominal) reflexives and intensifiers,   but requires what may appear to be  unconventional or controversial assumptions, that lack of space prevent us from discussing in sufficient detail here. Some are:
+
+\begin{enumerate}[noitemsep, wide=0pt]
+\item Movement to a $\theta$ position is routinely available (both from a $\theta$ position, as with reflexives, or from a non $\theta$ position, as with intensifiers in \ref{142} (cf. \citealt{charnavelsportiche:2021a}, for further discussion). Such movement is predicted to exist under the most parsimonious set of assumptions (cf., \citealt{Hornstein:1999}, pace \citealt{chomsky2021minimalism} which excludes it by fiat), and, first  merging into a a $\theta$-position necessarily being unprobed, it is unprobed.
+\item \label{loc} Standard A-movement is constrained by phase theory and probing. Allowing movement as in  point 1 above reveals a broader range of A-movement possibilities. Such movement is local, subject to phase theory but  unprobed and therefore otherwise unconstrained, consistent with \citeauthor{Charnavel2016}'s 2016 analysis. This allows examples such as:  
+{\it [the museum]$_k$ stores [ many replicas  [ of  itself t$_k$]]} or  {\it [the sheet]$_k$ folded [ on  itself t$_k$]}. 
+Other constraints are accidental: for example,  such movement  can violate certain islands, e.g., the Coordinate Structure Constraint (CSC). The CSC is typically seen as proohibiting extraction from within one conjunct only, but is better understood on a constraint on LF representations. See \cite{sportiche:2024b} as to why, and why movement to a $\theta$ position escapes the CSC.\footnote{This last sentence is different from the NELS53 published version's text, to take into account \cite{sportiche:2024b}.} 
+\item Given our analysis of bare {\it self}, there is no general antilocality of movement at least as far as A-movement to a $\theta$-position is concerned (possibly pace \cite{Deal2019}), although particular cases of too  local A-movement can be independently ruled out.
+\item \label{incorp} One option to analyze incorporation of {\it self} in English at least (but French would work the same with {\it auto}, the equivalent of incorporated {\it self} - see \citealt{sportiche:2022}) would not involve what is customarily assumed, that is a bare noun forming a constituent with the verb (which neither English, nor French otherwise allows). Instead the bare object phrase would raise, and would have to raise, to the subject $\theta$ position (probably due to requirements on weak elements having to move to a weak position as argued in \citealt{cardinaletti:1999}, and also related to what is sometimes called `pseudo incorporation'). This yields (internal structure of DP$_{@}$  abbreviated):
+
+\ex.  (LOG) \linkto{Eli$_k$} \under will    [$_{VP}$  [$_{DP_@}$ ... \from{\sout{Eli}$_k$}  self t$_k$\linkto{]}\under$_m$  immolate \from  t$_m$ ]     \label{322} 
+
+This assumption has several desirable effects, namely: \\
+(i) First, the right meaning is derived since DP$_@$ denotes Eli. \\
+(ii) With focus on {\it Eli}, alternatives  cannot be limited to the occurrence of {\it Eli} in spec,TP; otherwise, alternatives would not be  be linked to a $\theta$-role via a trace in VP (namely t$_k$ or {\it \sout{Eli}$_k$}). So focus must be on the syntactic object {\it Eli}, hence trigger alternatives also at least on  one of its traces t$_k$ and/or {\it \sout{Eli}$_k$} (see discussion on page \pageref{FOCUSALT} and footnote \ref{focfoc}), hence on both t$_k$ and {\it \sout{Eli}$_k$} since they must be in the {\it self} relation. This means that identity in focal alternatives must be sloppy as desired as {\it Eli} and all its traces must alternate.\\
+(iii) it correctly prevents the  direct object of a  {\it self} predicate from being interpreted logophorically across a different subject in spec,TP: if {\it Eli} in \ref{322} moved to the subject of LOG, skipping spec,TP, no subject would be licensed in spec,TP (it would be $\theta$-less); \\
+(iv)  it correctly predicts that the relation antecedent/weak reflexive ({\it 'imself}, which must also covertly `incorporate' - see  \citealt{charnavelsportiche:2022} based on \citealt{ahn:2015}) yields only sloppy readings under ellipsis or focus. In \ref{3221}  (structure of DP$_@$ abbreviated):
+\ex.   Only \linkto{Eli$_k$} \under will    [$_{VP}$  [$_{DP_@}$ ... \from{\sout{Eli}$_k$} 'im self\linkto{]}\under$_m$  immolate \from  t$_m$ ]     \label{3221} 
+
+Focus on {\it Eli} cannot be just on this occurrence of {\it Eli}, as it needs to be linked to its trace \sout{\it Eli}. So focus must be on the object {\it Eli}, guaranteeing sloppy readings as above in point (ii).
+\end{enumerate}
+
+\noindent Lack of space also prevents us from seriously discussing here other issues obviously relevant to our analytical and theoretical goals. The agenda is substantial:\begin{enumerate}[noitemsep]
+\item How the analysis of logophoric usages of reflexives in \ref{logoph} derives the properties of these usages, and why intensifiers do not (seem to) have logophoric usages.
+\item Why must the 2$^{nd}$ argument of {\it self} move: we would invoke Case reasons (in different ways in \ref{tree4}, \ref{tree3} vs \ref{322},  cf. footnote \ref{fnDP*}). In  \ref{tree4}, \ref{tree3},  as this argument occurs in a structure opaque to probing - a DP inside another one - it must, to get Case licensed,  move by unprobed movement first (to a $\theta$ position) to become Case licensable.
+\item More generally, what is the exact internal structure of DP* or DP$_@$ in \ref{tree4}, \ref{tree3}, \ref{322} and \ref{3221} among the possible options alluded to in footnote \ref{fnDP*}: there are at least three ways in English to build DP*: relativizing the first argument of {\it self}, or its second argument, or the predicate headed by {\it self} since it is nominal. We must derive which is used in which structural context, and how the properties consistent with the demands of the structure in which it occurs are derived.
+\item  In particular, why can't the pronoun and the name swap as in the intended reflexive {\it *She$_k$ kicked Leila$_k$'s self} or {the intended intensification \it [$_{DP}$ *she [$_{DP}$ Leila self]]}. We would argue that this follows from Condition C, properly understood.
+\item We must show how reflexivization functions in more complex constructions (e.g., some cases with multiple reflexives must involve ATB A-movement.
+\item How do cases of intensifying incorporated {\it self} precisely functions,  and how should the cases of intensifying incorporated {\it self} not discussed here be analyzed. 
+\item How to analyze weak reflexives in \citeauthor{ahn:2015}'s 2015 sense in the context of the present analysis (cf., \ref{3221}) This is discussed at more length in   \citealt{charnavelsportiche:2022}. 
+\item How do we  derive the seemingly paradoxical focal properties of reflexives documented in \citealp{ahn:2015} and \citealp{spathas:2010}  in the present analytical framework. These involve a licit answer {\it John hit {\sc himself}} with accent on the reflexive as answer to a subject focus(!) question such as {\it Who hit John?}
+\end{enumerate}
+A more complete discussion of the issues touched upon in this article and detailed answers to the questions above will be provided in  \cite{charnavel-sportiche:2023b}.
+\vspace{-1em}
+\bibliographystyle{linquiry2-nels52}\bibliography{/Users/ds/Library/CloudStorage/OneDrive-Personal/Latex/texmf/bibtex/master}
+\end{document}
