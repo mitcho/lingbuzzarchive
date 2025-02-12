@@ -1,0 +1,655 @@
+\documentclass[twoside]{article}
+%\usepackage[utf8]{inputenc}
+%\usepackage[latin1]{inputenc}
+%\usepackage[cyr]{aeguill}
+%\usepackage[francais]{babel}
+\usepackage[applemac]{inputenc}
+\usepackage{setspace}
+%\include{SpectorMacros}
+%\usepackage{pict2e}acquaintance
+\usepackage{graphics}
+\usepackage{graphicx}
+\usepackage{qtree}
+%\usepackage{pslatex}
+\usepackage{natbib}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{latexsym, linguex}
+ \renewcommand{\firstrefdash}{}
+ \usepackage{amssymb}
+\usepackage[hang]{footmisc}
+\usepackage{ragged2e}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{tree-dvips}
+\usepackage{pstricks} \usepackage{pst-xkey} \usepackage{pst-jtree}
+%\addtolength{\oddsidemargin}{-.25in}
+%	\addtolength{\evensidemargin}{-.25in}
+%	\addtolength{\textwidth}{.50in}
+%
+%	\addtolength{\topmargin}{-.25in}
+%	\addtolength{\textheight}{.5in}
+\usepackage{fullpage}
+
+\usepackage{framed}
+
+\usepackage{underarrows}
+\usepackage[margin=1.5 in]{geometry}
+\usepackage[normalem]{ulem}
+%\usepackage[T1]{fontenc}
+%\usepackage{ae,aecompl}        
+\usepackage{tcolorbox}
+\usepackage{tabu}
+\usepackage{pifont}
+\usepackage{multirow}
+\usepackage{bold-extra}
+\usepackage{enumitem, kantlipsum}
+\usepackage{url}
+\usepackage[%xetex, 
+bookmarks, colorlinks, breaklinks]{hyperref} % PDF setup - set your name and the title of the document to be incorporated into the final PDF file meta-information
+\hypersetup{linkcolor=blue,citecolor=blue,filecolor=black,urlcolor=MidnightBlue} % Link colors
+\usepackage{bibentry}
+\usepackage{skull}
+%\usepackage{enumitem}
+\usepackage{tabto}
+
+%%For notes in tables
+\usepackage[flushleft]{threeparttable}
+
+\usepackage{stmaryrd}
+%$\llbracket a+b\rrbracket$
+
+\headsep= 17pt
+
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+%\fancyhead[LE]{Control}
+%\fancyhead[RE]{Basics}
+\fancyfoot[C]{\thepage}
+%\fancyhead[LE]{{\sc $\skull$ draft $\skull$}  \date}
+\fancyhead[RE]{{\sc $\skull$comments welcome $\skull$ }}
+\fancyhead[LO]{ {\it About the CSC} \date}
+\fancyhead[RO]{Dominique Sportiche }
+\renewcommand{\headrulewidth}{1pt}
+
+\setlength{\headheight}{13pt}
+
+
+\title{{\it  The Coordinate Structure Constraint:\\
+ not a constraint on movement}\thanks{Thanks to 
+%%Andrew Simpson, Audrey Li, 
+%Barry Schein,
+Boban  Arsenijevic, 
+%%Carlo Geracci, Danny Fox, David Adger, Dylan Bumford, Edward Keenan, Ethan Poole,   
+ Isabelle Charnavel,    
+%%Ken Safir, Kyle Johnson, 
+%Martin Prinzhorn, 
+Milica Denic, 
+%%Noam Chomsky,  Pranav Anand, Rajesh Bhatt, Roger Schwarzschild, 
+%Richard Stockwell, 
+and Roni Katzir. 
+%%Roumyana Pancheva,  Simon Charlow, Tim Hunter, 
+%Tim Stowell,  Travis Major, 
+%Vincent Homer, Viola Schmitt, and Yael Sharvit. 
+%the Institut Henri Nicod, USC, and MIT audiences, the participants in the Harvard Ana-Log Worskhop,  and  the UCLA audiences in 
+%'s and my UCLA Spring 2018  seminar and in the Syntax and Semantics seminar.
+%This work was supported in part by the NSF under grants 1424054 and 1424336.}\\
+%{\small or} \\
+%the {\it de dicto aliquis} requirement\\
+%{\small $\skull$ draft $\skull$}
+}}
+\author{
+Dominique Sportiche\footnote{Email contact: dominique.sportiche@ucla.edu}\\
+%affiliation
+\small UCLA}
+\date{December 2024}
+
+\begin{document}
+%
+%RAJOUTER:
+%HPSG/GPSG and unification
+%arguement agaisnt RNR
+%
+%this proposition can't be true and this one be false\\
+%could be \\
+%this proposition can't be  true and {\sout this one} can't be this one false\\ 
+%with ATB but overt movement in the first and covert in the second, followed by ellipsis.\\
+%
+%Not possible: because of examples with noone.\\
+%
+%
+%at least one  professor is always considered right and at least one student always considered wrong 
+%
+%can't mean:
+%* there is at least one professor who is always considered right and there is at least one student who is always considered wrong
+%* there is at least one  professor who is always considered right and it is always the case that there is at least one student who is always considered wrong
+%* it is always the case that there is at least one  professor who is always considered  right and there is at least one student who is always considered wrong
+% $\checkmark$ it is always the case that there is at least one professor who is always right considered right and there is a student who is always wrong
+% 
+%Check:
+%la moitié d'entre nous a defendu ses interets et l'autre moitie aussi strict and sloppy\\
+%la moitié d'entre nous ont defendu nos/leurs  interets et l'autre moitie aussi  strict only with nos, and sloppy\\
+%la moitié d'entre nous avonts defendu nos/leurs  interets et l'autre moitie aussi  strict*, and sloppy\\
+%
+
+\setlength{\Exlabelsep}{0.5em}%
+\setlength{\Extopsep}{.66\baselineskip}%
+\setlength{\SubSubExleftmargin}{2.5em}%
+\setlength{\SubExleftmargin}{1.5em}%
+\setlength{\Exindent}{0pt}%
+\setlength{\Exlabelwidth}{3em}%
+
+\bibliographystyle{chicago}
+\maketitle
+\begin{abstract} 
+\noindent 
+The Coordinate Structure Constraint (CSC)  is typically taken to be a constraint on movement prohibiting extraction of, or from, a single conjunct and is used as a movement diagnostic.\\ 
+This note first mostly merely recapitulates existing work, \cite{Ruys:1992},  \cite{Fox:2000}, \cite{Lin:2001}, \cite{Lin:2002}, \cite{Johnson:2009a} on extraction from a conjunct,  adding some controls, and a short discussion of movement of a conjunct. These works demonstrate that both A and A-bar overt or covert movement can systematically violate the CSC under the right conditions and suggest instead that that part of the CSC should be viewed as a constraint on interpretation. This allows movement to violate the CSC, as long as the output (at LF) is interpretively well formed. It next adds a short discussion of movement of a conjunct - reported to be allowed in some languages displaying a first conjunct/other conjuncts asymmetry - concluding that  covert movement cannot violate that portion of the CSC either.\\
+It next briefly discusses some consequences regarding binding, control theory,  clitic doubling and unification approaches.
+
+
+%The assumption that a syntactic dependency is a movement dependency if and only if it obeys island constraints is taken to be an established correlation, in practice near axiomatic. I discuss a number of cases showing that this is wrong. From a dependency perspective, I conclude that it is incorrect both for A-bar movement and for A-movement. From an Island perspective, it is wrong at least for the Coordinate Structure Constraint. More specifically, I will conclude
+
+\end{abstract}
+%\bibliography{/Users/ds/Cloud/OneDrive/Latex/texmf/bibtex/master}
+\newpage
+\tableofcontents
+\newpage
+
+
+\section{Introduction}
+
+A still common assumption about the Coordinate Structure Constraint (CSC) much relied upon in the literature is exemplified by quotes various recent works. For example, \citet[p. 429, 430]{bruening2021generalizing} discussing movement approaches to Condition A, here a case of {\it herself} in a coordination,\footnote{\cite{bruening2021generalizing}'s example, {\it The queen invited the baron and herself to tea} is not controlled for the exempt status of the anaphor. \cite{bruening2021generalizing} asserts that because a pronoun in place of the reflexive triggers a Condition B effect, the anaphor must be (able to be) non exempt. But this assertion is not justified and is false under certain approaches to Condition A and B (e.g. \citealp{Reinhart:1993b}, and descendants). So this example is not telling. However, there are examples with inanimates circumventing this confound, to wit {\it The MOMA sells pictures of its collection and pictures of itself}.} states:
+\begin{quote}
+%p. 429: The biggest problem for such approaches is the fact that local reflexives can occur in positions from which movement is banned. An important example of this comes from coordinated objects...\\
+In movement theories, then, (some part of) {\it herself} in such examples must move. However, coordinate structures constitute islands to movement. Movement should not be possible from just one conjunct of a coordinate structure...\\
+However, the fact is that all movement processes that have been identified are unable to move a single conjunct out of a coordinated phrase.
+\end{quote}
+The same argument could be leveled  against the movement theory of control, given the following acceptable examples in English and French:
+\exg. Mary {(both) wants} [[ PRO {to win} ] and [ {} John {to lose} ]] \label{control} \\
+Mary {veut (\`a la fois}) [[ PRO gagner ] et [ que Pierre perde ]]\\
+
+Such reasoning is far from isolated. Other recent examples are illustrated e.g. in  \citet[p. 1]{paparounas2023first}:
+\begin{quote}
+We investigate the syntax of the hitherto understudied phenomenon of first conjunct clitic doubling, with reference to Modern Greek. We argue that it provides crucial evidence against movement-based approaches to clitic doubling, which would incorrectly rule out first conjunct clitic doubling as a violation of the Coordinate Structure Constraint. 
+\end{quote}
+Similarly, \citet[p.1014]{Angelopoulos2020}  appeals to the CSC as a constraint on clitic movement itself when discussing BigDP approaches to the distribution of clitics: \label{AnSpo}
+\begin{quote}
+These Coordinate Structure Constraint violations thus raise a very serious challenge to the assumption that clitics move to their surface position from inside a big DP structure.
+\end{quote}
+Or in \citet[p.18]{messick2023case}:  
+ \begin{quote}
+ The fact that we can have the case-copying reflexive inside a coordination without inducing a violation of the CSC suggests that movement is not involved in the dependency between the reflexive and its antecedent.
+ \end{quote}
+  
+\noindent 
+There is  however a substantial body of work,   \cite{Ruys:1992}, \cite{Fox:2000}, \cite{Lin:2001}, \cite{Lin:2002}, \cite{Johnson:2017gapping}, showing that  the Coordinate Structure Constraint (CSC) is not a constraint on movement but a constraint on interpretation.  But this  work is scattered across several publications, different authors and many years, with different agenda (QR, wh-in situ interpretation, Gapping...), where there is no general discussions about movement and the CSC: some work concentrate on QR or wh-in-situ (to understand scope shifting operations or the interpretation of indefinites), others with instances of A-movement (to understand how Gapping functions). As a consequence, the general results are not visible, as evidenced by the quotes above. Here, 
+I will summarize this work mostly dealing with extraction from inside a conjunct, outline a formulation of the CSC as a constraint on interpretation, provide a short additional discussion of extraction of a full conjunct also showing that the constraint is an interpretive constraint, and briefly return to the impact of this formulation as a constraint on interpretation on the analysis of Binding, Control or clitic doubling, showing that the above arguments have no force.
+
+\section{Background}
+
+\subsection{Islandhood and Movement}\label{rec}
+There are two (relevant) kinds of XP/XP Dependencies between a structurally high $\alpha$ and a structurally low $\beta$:
+
+\ex. Binding of $\beta$ by $\alpha$: Nobody$_{{ \alpha}}$ thinks that (I believe that) you saw him$_{{ \beta}}$ 
+
+%\begin{itemize}
+%\item allowed: e.g. of a pronoun by a quantifier, or 
+%\item prohibited: e.g. of a name by a pronoun (Condition C)
+%\end{itemize}
+
+\ex. Movement from $\beta$ to $\alpha$ (e.g. question or relative clause formation, topicalization):%\footnote{Here, the discussion is limited to A-bar movement but in principle, it could be extended to A-movement, as well as to {\sc agree} relations (which involve at least one head).}
+\a. Who$_{{ \alpha}}$ does nobody think that (I believe that) you saw$_{{ \beta}}$  
+\b. The woman who$_{{ \alpha}}$ nobody thinks that (I believe that) you saw$_{{ \beta}}$   
+\b. This woman$_{{ \alpha}}$, nobody thinks that (I believe that) you saw$_{{ \beta}}$   
+
+Binding and Movement are analyzed as having properties in common such as c-command of  $\beta$ by $\alpha$) and properties not  in common such as Island sensitivity.  Movement only is assumed to be island sensitive: there cannot be any island boundary between $\beta$ and  $\alpha$ (where the latter is the most local binder of the former): 
+
+\ex. Movement and Islandhood \label{ex1}: * $\alpha$ ... [$_{island boundary}$  ... $\beta$\\
+if $\alpha$ locally binds $\beta$ as its immediate trace (i.e. one step movement).
+
+But how do we evaluate whether \ref{ex1} is correct? To do so, we must have an independent characterization of movement dependencies and check whether such so characterized dependencies obey islands.
+
+However movement is defined, say Remerge,\footnote{Movement is defined as Remerge: an element first merged in some position Q is remerged in some position P c-commanding Q. However, new questions arise in the context of \cite{chomsky2021minimalism}, which separates Internal Merge from "Form Copy", which are beyond the scope of this note.}  to evaluate the truth of \ref{ex1}, we must find a reliable way to detect all and only Remerge cases. 
+
+One  property of movement is Displaced interpretation, aka Reconstruction / Connectivity,  namely the possibility in an $\alpha$/$\beta$ dependency for $\alpha$ to semantically behave as if it was structurally located where $\beta$ is.  %\end{center} 
+This property is reliable. Why?
+
+Firstly it is natural: given how first Merge functions, when first merged, a contentive $\alpha$ must enter into a function argument relation with some local element. It is not surprising therefore than when Remerged, it should continue behaving as such semantically, that is as if it were in the position $\beta$ (e.g. for binding and scope).
+
+Secondly, reconstruction is reliable: in all the standard/agreed upon cases of movement and non movement, if movement has taken place, reconstruction is available (see \citealt{Sportiche2017a}). This can be used as a diagnostic.\footnote{Note that movement does entail the possibility of {\bf total} reconstruction as movement may be an intrisic scope shifting rule. Conversely, apart possibly from certain copular constructions which have special semantic properties (because of the verb {\it be}), cf. \citealp{Sharvit:1999},  if reconstruction is available, movement is deemed to have taken place. This implication - if reconstruction then movement - is sometimes questioned, see e.g. \cite{keine-poole:2018}, but, for reasons beyond the scope of this note, unconvincingly in my view.}
+
+Thirdly, the precise properties of reconstruction and how it correlates with movement is predictable: it is possible to construct a theory of how movement functions that predicts this correlation: \cite{Sportiche:2016} shows it follows from:
+\begin{itemize}[noitemsep]
+\item Movement being the case of a single syntactic object having more than one structural address (=more than one occurrence).
+\item The Full Interpretation Principle applying to syntactic objects (not occurrences), implying that as long as one occurrence is interpreted, this principle is satisfied (thus licensing `total reconstruction').
+\item Semantic compositional rules only composing sisters.
+\end{itemize}
+
+There are other movement diagnostic tools briefly discussed e.g. in  \citet[appendix]{sportiche:2020}, the application of which would be compatible with using reconstructability. Using reconstructability, \cite{sportiche:2020} shows that some movement - namely French Clitic Left Dislocation - can violate (strong) islands. This illustrate the general point that the *kind* of movement involved matters when evaluating the scope  of \ref{ex1}. And therefore, this means that some care must be taken using islandhood as a test for movementhood. Licitly being an island violating dependency does not mean not being movement. 
+
+\subsection{The Coordinate Structure Constraint}
+
+The CSC, like many other island constraints, is formulated as a constraint on movement, blocking movement dependencies between inside and outside of these islands. Following \citet[Ch.4:(84)]{Ross:1967}'s first formulation, this is typically interpreted as applying universally, to all movements. 
+This formulation must be amended due to a known exception to the CSC: the case of Across-the-Board extraction (ATB, cf. \cite{Williams:1977b},\cite{Williams:1978}). Here is an amended version adapted from \cite{mayr2017asymmetric}:
+\ex. The Coordinate Structure Constraint: In a coordinate structure, 
+\a. \label{csca} CSCa: no  element contained in a coordinate may be moved out of that coordinate unless it moves from all coordinates, 
+\b. \label{cscb} CSCb: nor may any coordinate be moved.
+
+These two clauses noted here CSCa and CSCb are distinct and are sometimes named differently, for example: the Conjunct Constraint, a ban on movement of a conjunct for CSCb, and the Element Constraint, a ban on movement out of the conjuncts  for CSCa (cf.,  \citealt{Grosu:1973}, \citealt{Pollard:1994} which show they are independent from each other). We will begin with a discussion of CSCa \ref{csca}, the Element Constraint. We return to  a brief discussion of CSCb \ref{cscb} in section \ref{cscbsection}. 
+Clause CSCa \ref{csca} yields the following, with the first sentence ill formed as a CSC violation and the second well formed by ATB extraction:
+\ex. \label{csc1} 
+\a. * The people which$_i$ Henry [$_{VP}$ wanted to meet t$_i$ ] and [$_{VP}$ met friends of Bill] left 
+\b.  The people which$_i$ Henry [$_{VP}$ wanted to meet t$_i$ ] and [$_{VP}$ met friends of t$_i$ ] left
+
+Given the conclusion of the previous section, one should be careful about generalizing from the typical constructions used to illustrate the CSC - typically relative clause or question formation -  to other kinds of dependencies, e.g. other A-bar movement dependencies, A-movement dependencies. 
+
+And indeed, investigating what happens more systematically will lead to the conclusion that in fact, (non ATB) movement can licitly violate the CSC, as long as the CSC is not violated at LF, as \cite{Ruys:1992} concludes.  
+
+
+\section{Movement Violations of the CSC}
+\subsection{The A-bar movement case: \cite{Ruys:1992}, \cite{Fox:2000}}
+
+\cite{Ruys:1992} and \cite{Fox:2000} primarily discusses QR and provides arguments that it is best analyzed as a (covert) movement\footnote{I take covert movement to be "overt covert movement", that is syntactic movement where the trace is pronounced instead of its antecedent.} rule, and that the CSC is not a constraint on movement but a constraint holding at LF.
+
+\subsubsection{Wh-movement violations of the CSC} 
+
+The kind of QR examples Ruys discusses can be  adapted to overt wh-movement.
+Consider the following contrasts (both in French reflecting my own and others's judgments, and English):
+
+\exg.
+Which author$_m$  {didn't you want to} study t$_m$  nor read ... \label{cscres}\\
+Quel auteur$_m$ {ne voulais tu pas} \'etudier  t$_m$ ni lire ...\\  
+\a. \hspace{.em}*Montesquieu's essays \label{cscresa}\\ 
+ *les essais de Montesquieu
+\bg.  his$_{\checkmark?m, *p}$ novels \label{cscresb}\\
+ses$_{\checkmark?m, *p}$  romans\\
+\bg.  any of his$_{\checkmark?m, *p}$ novels \label{cscresc}\\ 
+aucun de ses$_{\checkmark?m, *p}$ romans\\
+\bg. {anything that} was said about him$_{\checkmark?m, *p}$\label{cscresd}\\
+ {quoi que ce soi qu'on} ait dit de lui$_{\checkmark?m, *p}$\\
+\bg.  the other authors who {knew him$_{\checkmark?m, *p}$} \label{cscrese}\\
+les autres auteurs qui {le connaissait$_{\checkmark?m, *p}$} \\
+
+(a) is a straight CSC violation. All others are much better than (a), even perfectly acceptable for some, as long as the pronoun they contain is understood as bound by the wh-phrase (else they are ill formed).\footnote{Note that these examples violate the `Parallelism Constraint on Operator Binding' proposed in \cite[p. 607, (6)]{Safir:1984}. Safir does provide an example (p. 610, (15a)) of such a violation with coordination, but with the resumptive pronoun in the first conjunct and the gap in the second conjunct. These are degraded as compared to the good examples in \ref{cscres} which needs to be understood. However, what matters to our purpose here is the acceptability of examples in \ref{cscres}. \label{fn5}}\\
+How are these facts compatible with the CSC as a constraint of movement? First all these sentences involve movement from one conjunct at least, namely the first one. The reason is that in each of these first conjuncts, there is a gap in a position that is only licensed  via movement. Now, no CSC violation would occur if we could analyze the acceptable cases as involving ATB. This would require moving from a position in the second conjunct disallowing a silent trace; and removing the violation,  spelling the trace out as a pronoun. I will now discuss below why this is not the case. \\
+Let now us try to  assess the  feasibility of an analysis of these sentences as involving ATB. We need an independent criterion to decide whether movement from the second conjunct is involved. We can use reconstructability, as discussed in section \ref{rec}  and as did  \cite{Aoun:2001} for resumption in Lebanese: unsurprisingly, wh-movement does not reconstruct into islands, even in the presence of a resumptive pronoun.
+To illustrate, consider the putative movement structure involved from the second conjunct say in the \ref{cscresd} example which would be out without  the resumptive pronoun:
+\exg. Which author$_m$  {didn't you want to}  read whatever was said about him$_{m}$\\
+Quel auteur$_m$ {ne voulais tu pas} lire {quoi que ce soit qu'on} ait dit de lui$_{m}$\\
+
+And let us construct a parallel example where we attempt reconstruction (simplifying it somewhat. In \ref{cscresd}, we used negation  and an NPI to guarantee that there was embedding. Here this is no longer necessary):
+\exg. [Which description of himself$_k$ ]$_m$  {did you want to}  read what nobody$_k$ {said about it$_{m}$}\\
+[Quelle description de lui$_k$ ]$_m$ {voulais tu } lire {ce que} personne$_k$ {n'en$_{m}$ avait dit}\\
+
+Without the portion {\it of himself/ de lui}, the sentence has the intermediate status of a resumption into an island. With it and {\it himself/it} intended to be bound by {\it nobody}, the sentence is unacceptable. We conclude there is no movement originating from the second conjunct in (at least some of) the examples   \ref{cscres} 
+%But perhaps in such cases, there is no movement from the first conjunct either. This should be checked too. To this end, we can modify example (d) as follows, adding a strong island in the first conjunct:
+%\exg .Which author$_m$  {didn't you want to} [meet {the man} who study t$_m$]\\ 
+% Quel auteur$_m$ {ne voulais tu pas} [rencontrer l'homme qui \'etudie  t$_m$]\\
+%nor read {anything that} was said about him$_m$\\
+%ni lire  {quoi que ce soi qu'on} ait dit de lui$_m$\\
+%
+ and that they only involve movement from the first conjunct, hence CSC violations: the CSC cannot be constraint on movement. \\
+
+We take as significant the sharp acceptability contrast between  \ref{cscresa} and \ref{cscres}b-e. Still these latter examples are not perfect. We expect their status to mirror that found with wh-questions together with resumption in an island position.\footnote{We should control for one more, involved, confound. What this example shows is that there can't be movement from below {\it nobody}. But could there be movement from a position within the second conjunct outside of the island and resumed by the pronoun in the island, as argued in  \cite{sportiche:2020}?  \cite{sportiche:2020} argues that a preposed wh-phrase is always moved to its position, even in the presence of a resumptive pronoun bound by the wh-phrase, from a intermediate Topic position. If this is right, in the case of a conjoined structure, there must be at least one trace gap somewhere, either outside of the conjunction, or in some conjunct, e.g. the first conjunct (cf. footnote \ref{fn5}). Must there be a trace gap also in the second conjunct? Yes if the CSC is a constraint on movement. To prevent this, it suffices to make the conjuncts small enough so that there is no available Topic position in the second conjunct to extract from. Consider the following contrast:
+\vspace{-1em}
+\ex.[]\a.[(i)] * Who$_m$ did you see pictures [[ of t$_m$] and [of John's  mother]] 
+\b.[(ii)] Who$_m$ did you see pictures [[ of t$_m$ ] and [of his$_{\checkmark?m, *p}$  mother]]
+ 
+ \vspace{-1em}
+Here the conjuncts are too small to host an island external Topic position in the second conjunct. Yet we observe the contrast between a standard CSC violation in (i) and the milder resumptive case in (ii). If a trace gap is indeed required in resumption cases, that it is not required in the second conjunct suffices to reinforce the point under discussion, namely that the CSC is not a constraint on movement. }
+
+\subsubsection{QR violations of the CSC}
+
+ \cite{Ruys:1992} and \cite{Fox:2000} primarily\footnote{\cite{Ruys:1992}  also discusses wh-in situ, which shows the same behavior as QR.} discuss QR, the  mechanism for (some) scope assignment modeled as a movement rule. \\
+ First, QR is a type of A-bar movement.  This is shown in \cite{Johnson:1998} which assimilates it to a kind of A-bar scrambling, and is supported by the analysis of Tiedeman's puzzle in \citet[p.77]{Fox:2002}, showing that QR can, under the right circumstances, escape tensed clauses from object position. \\
+ Next, it can be shown that QR obeys the CSC.\footnote{This is unexpected under a view such as \cite{barker2022rethinking}, which suggests treating scope shifting via `continuations', essentially an unbounded version of QR. \label{fnbarker}} However, since \cite{Ruys:1992}, how  inverse scope (object outscoping subject) is supposed to  function has evolved (see e.g. \citealp{Fox:2000}) in a way that many classic examples used to show that QR  obeys the CSC are confounded. This is discussed in \cite{spector-sportiche:2013}, which provides non confounded cases illustrating the sensitivity of QR to the CSC (see op. cit, for why). Consider:
+
+\ex. \label{ecm1} If at least one witness heard  every robber come in...
+%\footnote{Benjamin: il me semble que inverse scope est bon, meme si every n'est pas final. Mais sinon, on peut utiliser:If at least one witness heard  John speak to every robber\\If at least one witness heard  [a guard snore] and [John speak to every robber]}
+
+This clearly can have an inverse scope reading, namely: `if it is the case that for every robber, there is at least one witness (possibly different for each robber) who heard this robber come in, \ldots'. 
+% Given the development of how inverse scope functions , this reading arises when {\it at least one witness} reconstructs into its VP internal position (headed by the verb `heard') and {\it every robber} QRs to the periphery of this very VP, outscoping the subject. Importantly, then, QR must be able to lift a quantified object outside of the smallest VP containing its surface position.\\
+Now consider \Next:
+
+\ex. 
+\a. If at least one witness heard [[every robber come in]  and [a guard snore]], \ldots
+\b. If at least one witness heard [[a guard snore] and [every robber come in]], \ldots
+
+Here, in the absence of the CSC, an inverse-scope reading is predicted to be available, just as it is for \ref{ecm1}. This reading would result from an LF in which the matrix subject \emph{at least one witness} has been reconstructed to its VP-internal subject position %(i.e. to the sister of the V that hosts `heard') 
+and the subject of the first conjunct (\emph{every robber}) has QR-ed to the edge of the matrix VP. This reading could be paraphrased as `If, for every robber, there is at least one witness (possibly a different one for each robber) and there is a  guard (possibly a different one for each robber) such that this witness heard this robber come in and this guard snore, \ldots'.
+But this reading is clearly not available, which can thus be reasonably attributed to the CSC.
+
+Now the the type of examples discussed by \cite{Ruys:1992} and \cite{Fox:2000} bearing on the CSC are as follows:
+\ex. \a.  a different student admires every professor and hates  the Dean
+ \b. a different student$_m$ admires every professor$_k$ and wants him$_k$ to be on his$_m$ committee 
+ 
+In the first example, the object of the first conjunct cannot outscope the subject:\footnote{This is not a CSC effect. See \cite{spector-sportiche:2013} as to why.} the choice of student cannot covary with the choice of professor.
+But in the second this is possible if this object binds a  pronoun. In order for this binding to be allowed, this object must outscope the conjunction {\it and} so as to have the pronoun in its scope, and therefore violate the CSC. \\
+Why is this allowed? 
+It should be clear that the structure of such examples is parallel to the wh-movement cases discussed in the previous section. Intuitively, we return to this in section \ref{formul}, violating the CSC in the first example would violate the ban on vacuous quantification in the second conjunct since the universal quantifier has nothing to bind in it. But not in the second example, given the presence of the pronoun.\\
+A covert ATB analysis of such cases is implausible. If QR is analyzed as covert movement, there is no option to leave a resumptive pronoun as trace. If QR is analyzed as covert overt movement, that is as overt movement with the trace being spelled out instead of the highest occurrence, a copy of the quantifier would be expected in the locus of the resumptive pronoun or, implausibly, that the quantifier is somehow spelled out as a pronoun at PF.  This is made even more implausible by the existence of examples with a pronoun in the second conjunct deeply embedded inside an island (here a possessive inside a reduced relative), making a movement analysis unavailable given the locality constraints on QR-ing  quantifiers like {\it every}.
+
+\ex. a different student admires every professor$_k$  and tries to attend [all the lectures discussing his$_k$ work] 
+
+Lastly, it can be shown that there is no reconstruction of the QRed phrase into the second conjunct.
+Consider:
+\ex. \a. a different critic commented on [every portrait of Rothko$_k$]$_m$ and wanted him$_k$ to comment  on it$_m$  
+ \b. a different critic commented on [every portrait of Rothko$_k$]$_m$ and wanted {\red him$_k$} to comment  on [every portrait of {\red Rothko$_k$}]$_m$  
+ 
+ 
+ We can understand the (a) example as meaning that for every portrait of Rothko, a different critic commented on it and wanted Rothko to comment on this painting. If there was ATB from the resumptive position, we would (given that QR is not A-movement, cf. e.g. \cite{Johnson:1998}, \cite{Fox:2002}) erroneously it turns out, expect a condition C violation as shown in red in (b).
+ 
+%\noindent All such examples show that movement can violate the CSC.\\
+%Additional work, possibly even more radical in its implications that I  do not discuss here, argues that QR violations of the CSC occur in cases of `telescoping' in which certain quantifiers seem to bind across sentence boundaries (cf., \citealt{keshet2007telescoping}).
+%% 
+% 
+%  
+% 
+%sFirst, a number of examples shows that  QR displays sensitivity to the CSC. For example, the CSC examples due to Rodman (1976) include the following.
+%\ex.   a soldier shot everywoman and everychild 
+%b. every dog or every cat loves a woman
+%Both (76a) and (76b) are merely two-ways ambiguous. Either the subject takes scope over the object, or vice versa. (76a), for example, cannot be paraphrased as: "for every woman x, there is a soldier y such that y shot both x and every child." This appears to indicate that "the quantifiers in a conjoined structure function as a single unit with respect to scope differences" (Rodman 1976:171)
+%
+%
+%The relevant examples from \cite{Ruys:1992} are the following pairs:
+%\ex. \a. some professor admires every student and despises the Dean
+%\b. a soldier found every student$_i$ and shot him$_i$
+%
+%In (88), every student cannot take scope over some professor. This is what we expect to find, since the object cannot be adjoined to a higher node than VP or it would violate the CSC.
+%Rodman (1976) notes (with some disappointment, it appears) that VP-conjunction structures do not seem to block wide scope for quantified object NPs. The one example he takes into consideration is (93).
+%
+%Furthermore, this analysis, if correct, seems to indicate that the CSC, and the ATB exception to the CSC, are conditions on the chains that result from movement, rather than on the application of move ?.
+\subsubsection{A short note about some other cases}
+
+Overt violations of the CSC are also reported in other configurations. For example, such violations are reported in German and discussed in \cite{Johnson:2002} (and analyzed in a way similar to some of the A-movement CSC violations discussed in section \ref{Amov}) and in \cite{mayr2017asymmetric}. Similarly, overt violations have long been reported  e.g. in South Slavic although this is debated (cf. \citealp{arsenijevic2020experimenting}, and references therein) to some of which we briefly return below in section \ref{cscbsection}.   \\
+Additional work, possibly more radical in its implications that I  do not discuss here, argues that (covert) QR violations of the CSC occur in cases of `telescoping' in which certain quantifiers seem to bind across conjunctions, disjunction and even sentence boundaries, see \cite{keshet2007telescoping}.\\
+% 
+%\cite{kato2006symmetries} also discusses 
+How to analyze these cases is still controversial. They seem consistent with what is concluded in section \ref{formul}, but only further research can determine if they truly are.
+
+\subsection{The A-movement case: \cite{Lin:2001}, \cite{Lin:2002}, \cite{Johnson:2017gapping}}\label{Amov}
+
+Clear cases of A-movement violating the Coordinate Structure Constraint are found with Gapping constructions. This is discussed in various works of Kyle Johnson's since the early 1990's, see  \cite{Johnson:2017gapping} for a summary, as well as in \cite{Lin:2001}, \cite{Lin:2002}, which, adopting the view in \cite{Ruys:1992} and  \cite{Fox:2000} concludes that the CSC is an interpretive constraint. Here is one case illustrating these violations (and a couple more are discussed below in section \ref{formul}).
+
+Consider the following from \citet[(88)-(90)]{Johnson:2017gapping}:
+\ex.  \a.  X can be true and Y be false \label{88}
+\a. because they are logically independent \label{88a}
+\b. \# but X can't be true if Y is false.\label{88b}
+\z.
+\b. It's possible for X to be true and Y to be false (because they are logically independent).  \label{89}
+\b.  X can be true and Y can be false (but X can't be true if Y is false).\\ \label{90}
+{\it compare}\\
+\# It's possible for X to be true and Y to be false but X can't be true if Y is false.
+
+\ref{88} is unambiguous in a surprising way: it must mean that it is possible both for X to be true and Y to be false. More precisely, \ref{88} can express what \ref{89} does, and is therefore compatible with the continuation in \ref{88a}.
+This is the interpretation that arises if {\it can} outscopes {\it and}. But \ref{88}  can't express what \ref{90} does, and is therefore, unlike \ref{90}, incompatible with the continuation in \ref{88b}.
+This means that  the modal {\it can} must have scope over the conjunct in cases like \ref{88} (see \citealp{Johnson:2017gapping} for a discussion of when this arises).
+
+What kind of syntax gives rise to this pattern? The syntax in  \ref{91a} below with clausal coordination would give the wrong result since it would allow the interpretation in \ref{90}. 
+\ex. \a. X can be true and Y \sout{can} be false \label{91a}
+\b. X$_k$ can [ [ be t$_k$ true] and [ Y be false] ] \label{91b}
+
+The syntax in \ref{91b} - the small conjunct analysis - correctly yields only the right one and is thus widely adopted (e.g. by \citealp{Siegel:1984} in essence, \citealp{Coppock:2001}, \citealp{Lin:2002}, \citealp{Johnson:2017gapping},  \citealp{potter2017two}, \citealp{hirsch2017inflexible}). But this requires A-movement to be able to violate the CSC.
+
+Before concluding this section, note that another conceivable derivation not violating the CSC is not available. This derivation for an analog of  \ref{88}, would take the following form: 
+\ex. This$_k$ can't be t$_k$ true and that$_m$ \sout{can} be t$_m$ false
+
+It would involve coordination of two full clauses, with raising to subject in both conjuncts and require mandatory total reconstruction in both. Of course why total reconstruction would be required would have to somehow be derived. But such an approach runs into problems because total reconstruction of a raised subject is in fact not required. This is discussed in the next section, see examples \ref{103} and \ref{NPI}.  
+
+
+\section{How to formulate the CSC}\label{formul}
+
+The CSC clearly does not block movement itself, neither in the A-bar movement case, not in the A movement case but seems instead to constrain the output of movement, as  \cite{Ruys:1992} had concluded. How should it be formulated? 
+The discussion in this section is limited to CSCa \ref{csca}: extraction from within a conjunct.\\
+\citet[chap 2, (57)] {Fox:2000} adopts the following which would be consistent with the observed data on wh-movement and QR:
+
+\ex. \label{CSCF} \a. Extraction out of a coordinate structure is possible only when the structure consists of two independent substructures, each composed of one the coordinates together with material above it up to the landing site (henceforth, {\it component structures}. 
+ \b. Grammatical constraints are checked independently in each of the component structures.
+
+It would apply as follows. In a licit, ATB movement case, each component is well formed.
+\ex. ATB WH-movement
+\a. $\checkmark$ Which poet$_k$ did you [ [ read t$_k$] and [ love t$_k$] ]? \label{lov}\\
+Component Structures:
+\b. $\checkmark$ Which poet$_k$ did you  [ read t$_k$]?
+\b. $\checkmark$ Which poet$_k$ did you [ love t$_k$ ]? 
+
+In an illicit non ATB movement case, one component is ill formed, ruled out by  the independent general principle in \ref{vq}:
+\ex. Non-ATB WH-movement
+\a. * Which poet$_k$ did you [ [ read t$_k$] and [ love William Blake] ]?\\
+Component Structures:
+\b. $\checkmark$ Which poet$_k$ did you  [ read t$_k$] ?
+\b. * Which poet$_k$ did you [ love William Blake ]? 
+
+\ex. Vacuous quantification is banned \label{vq}
+
+In a licit non ATB movement case, with a bound pronoun, there is no vacuous quantification.
+
+\ex. Non-ATB WH-movement
+\a.  $\checkmark$  Which poet$_k$ did you [ [ read t$_k$] and [ love all of his$_k$ poems ] ]? \label{100a}\\
+Component Structures:
+\b. $\checkmark$ Which poet$_k$ did you  [ read t$_k$] ?
+\b.   $\checkmark$ Which poet$_k$ did you [ love all of his$_k$ poems ]? \label{100c}
+
+To derive the right result here, we must make a bit more precise what is meant by `grammatical constraints' in \ref{CSCF}.  Indeed \ref{100c} on its own is less acceptable than \ref{100a}. A natural idea is to restrict them to LF relevant constraints, that is interpretive constraints. This is in part independently  warranted (see below example \ref{mismatch} showing that agreement mismatch does not matter). From this point of view, \ref{100c} is well formed but degraded for other non interpretive reasons.\footnote{That is whatever governs the availability of resumptive pronouns, for example, competition with alternatives lacking a resumptive, which would be responsible for why a pronoun in the trace position in the second conjunct of \ref{lov} is perceived as somewhat deviant.}
+As  \cite{Lin:2002}, proposes, this applies to the A-movement case just discussed. Accordingly,  an example  like \ref{91b}  or \ref{101} below would be well formed provided that the subject {\it Bill} totally reconstructs in its trace position as in \ref{101a}, yielding the two components \ref{101b} and \ref{101c}, each interpretively well formed:\footnote{As \cite{Lin:2002} notes, total reconstruction of {\it Bill} seems to contradict Fox's 2000 Scope Economy condition barring vacuous scope shifting operation. This could be taken to mean that scope independent elements such as proper names do not fall under Scope Economy.}
+\ex. Bill$_k$ can't [ [ be t$_k$ right] and [ Tom be wrong] ] \label{101}
+\a.   can't [ [ be Bill$_k$ right] and [ Tom be wrong] ] \label{101a}
+\a. can't  [ be Bill$_k$ right]  \label{101b}
+\b. can't [ Tom be wrong]  \label{101c}
+\z.
+\b. Bill$_k$  can't [ [ be t$_k$ right] and [ Tom be wrong] ] \label{101aa}
+\a. Bill$_k$ can't  [ be t$_k$ right]  \label{101ba}
+\b. Bill$_k$ can't [ Y be wrong]  \label{101ca}
+\z.
+
+Failing to totally reconstruct the subject Bill in its trace position as in \ref{101aa} would yield the two components \ref{101ba} and \ref{101ca}, the former interpretively ill formed (Bill not being the argument of anything).   
+As  \cite{Lin:2002} remarks this makes two correct predictions.\\
+First, the following sentence is ambiguous, but its gapping counterpart is not:
+\ex. \a. Many drummers can't leave on Friday \label{102a}
+\b. Many drummers can't leave on Friday, and many guitarists arrive on Saturday \label{102b}
+
+The ambiguity of \ref{102a} arise because the subject may either scope over or under the negated modal. If the subject outscopes the modal, the sentence means that for many different individual drummers, it's the case that they are unable to leave on Friday. If the subject is interpreted below the negated modal, this yields:  it is not possible that a large group of drummers leave on Friday.\\ 
+The above account correctly predict that only this second reading is available in \ref{102b}, where {\it many drummers} reconstructs under the negated modal. \\
+
+That non ATB movement from the first conjunct is allowed when there is  a bound pronoun in the second, hence without vacuous quantification, takes care of examples inspired by \citet[p.248, (15a)]{McCawley:1993} and his discussion, and also discussed in  \citet[p.73(23)]{Lin:2002}. Note first that the well known well-formedness of {\it Noone$_k$'s mother scolded him$_k$}, shows that a possessor can scope like its DP container. 
+
+\ex. No one$_k$'s duck will [ [t be moist enough] or [his$_k$ mussels be tender enough] ] \label{103}
+\a. No one$_k$ will  [t$_k$'duck  be moist enough]  \label{103a}
+\b. No one$_k$ will  [his$_k$ mussels be tender enough] \label{103b}
+
+The remarkable fact  here is that the QP {\it no one'} in the first conjunct is able to bind the pronoun {\it his} in the second conjunct.  First, this means, again, that we cannot be dealing with two coordinated full clauses (with ellipisis), since, as McCawley notes, the following sentence is ill formed as the pronoun is not in the scope of the quantifier:
+\ex. * [No one$_k$'s duck will be moist enough] or /and his$_i$ mussels \sout{will} be tender enough.
+
+Second, the subject outscopes the coordination as shown in \ref{103}: the sentence only means that there is nobody who is such that his duck will be moist enough and his mussels tender enough. This time, this option is predicted to be fine: the two components that such a sentence yields without reconstruction, namely \ref{103a}  and \ref{103b}, are both interpretively well formed, the QP in each of them binding a variable.\footnote{Combining the last two types of examples shows that the syntactic structure must be able to be a bit more complex than shown so far. Indeed, consider the French example (which apparently differs from comparable English examples reported in \citet[p.81, (43b)]{Lin:2002}):
+\vspace{-1em}
+\exg.[(i)] {Beaucoup de} musiciens {ne peuvent pas} partir le jeudi et leurs rempla\c cants n'arriver que le samedi\\  
+Many musicians$_k$ can't leave on Thursday, and their$_k$ replacements arrive only on Saturday\\ 
+
+\vspace{-1em}
+Given the presence of the pronoun in the second conjunct, reconstruction of {\it many musicians}
+under the negated modal should not be required. But this contradicts at least my judgement: the subject must scope under the modal. This shows that the subject must reconstruct below the modal but not so low as not to take the coordinated structure in its scope. This can be resolved if the structure is as below, with an intermediate trace on the spine, outside of the coordinated structure:
+\vspace{-1em}
+\ex.[(ii)] Many musicians$_k$  [can't  {\red t$_k$}  [[ t$_k$ leave on Friday] and [their$_k$ replacements  arrive only on Saturday]] 
+
+
+} 
+This also takes care of the following kind of contrast discussed in  \citet[p.74 (35)]{Lin:2002}. Consider first:
+
+\ex. \label{NPI} \a. No girl$_k$ will eat a green banana, or any of her$_{\checkmark k, *m}$ friends drink a pureed one. 
+\b. * No girl will eat a green banana, or any boy drink a pureed one. \label{NPI2}
+
+In the first example, just like in the case of CSC violations with wh-movement or QR, the possibility for the QP {\it no girl} to bind the pronoun {\it her} in the second conjunct allows a CSC violation. As a result, the QP {\it no girl} can outscope the disjunction and license the NPI {\it any of her friends} (only if {\it her} is bound by {\it no girl}.
+This yields the following logical form:
+\ex.   No girl$_k$ will [ [ t$_k$ eat a green banana]  or [ any of her$_{\checkmark k, *m}$ friends drink a pureed one]]
+
+In the absence of a bound pronoun in the second disjunct as in \ref{NPI2}, the subject must totally reconstruct into the VP: as a result, the NPI {\it any boy} is no longer in its scope and is thus unlicensed, yielding deviance. Once again, this contrast is unexpected if we were dealing with a conjunction of clauses.
+
+We may wonder why Fox's generalization in \ref{CSCF} should hold? Why should each component independently be checked for LF well formedness, at least for the cases we have looked at? Recent work may suggest a natural answer. \cite{schein2017and} and \cite{hirsch2017inflexible}  defend in different ways an analysis of at least some cases of symmetric coordination (of the type discussed here) as  involving conjunction reduction  in the classical sense of taking arguments with (more or less) sentence meanings. As a result, each component must be checked for interpretability because these components are syntactically and semantically present (together with some ellipsis and its effects).\\  
+This said, Fox's generalization is good enough for our purposes here but is too coarse to handle all cases of (even symmetric) coordination. Many more questions arise than can even be hinted at here, regarding coordinations, the relation with plurality, with distributivity, cumulativity  and so on (see e.g. \citealt{schmitt2019pluralities}, \citealt{schmitt2020boolean}).\footnote{The relevance of these considerations is illustrated by such examples as:
+(i) John and Jean were admiring pictures of a black cat$_m$ and pictures of the dog next to it$_m$
+(ii) Which cat$_m$ were John and Jean admiring pictures of t$_m$ and pictures of the dog next to it$_m$?
+
+Sentence (i) is true in a context in which John is only admiring pictures of a black cat and Jean is only admiring pictures of the next to the black cat. Sentence (ii) allows this kind of cumulative reading and is not a CSC violation. It is not clear how to get the components  needed for Fox's generalization, namely {\it Which cat$_m$ was John admiring pictures of t$_m$?} and {\it Which cat$_m$ was Jean admiring  pictures of the dog next to it$_m$?}. The formulation in \ref{CSCform} handles this type of sentence straighforwardly. } A slightly more abstract characterization would take the following form suggested in {\cite{Johnson:2009a} fundamentally limiting it to \ref{CSCform}:
+\ex. Coordinate Structure Constraint \label{CSCform}\\
+In a string  containing a coordination, if binding into one conjunct is required for computing the interpretation, binding into to all conjuncts is required.
+
+For example a moved wh-phrase cannot be interpreted without binding its trace. Then this phrase will have to bind something in each conjuncts. Similarly,  since  standardly A-moved DP will need to bind its trace to compute its $\theta$-role, this DP will have to bind something in each conjuncts. It should be clear that Fox's formulation is a subcase of this constraint where each components is interpretable by itself, something that is not necessarily the case (and underlies the debates regarding how to treat say conjunction, as Boolean or not).
+
+The idea that the CSC is a constraint on interpretation makes it also apt to handle apparent CSC violations involved in asymmetric coordination (regardless of what the coordinator is, be it {\it and, or, etc..}) of the following kind: 
+\ex. \a. How much can you [drink \_ and still stay sober]? (\citet[example 2]{Lakoff:1986})
+\b.  How many lakes can we [destroy \_ and not arouse public antipathy]? (\citet[p. 201]{Pollard:1994})
+\b. He regards the limitless abundance of language as its most important property, one that any theory of language [must account for \_ or be discarded]. (\citet[p. 183]{campbell1982grammatical})
+
+Indeed, characterizing such cases requires paying attention to the interpretive properties of the constructions. Thus a necessary condition for these type of violations to be allowed is failure of semantic symmetry defined as  truth conditional invariance under conjunct permutation (cf. \citealp{mayr2017asymmetric}, for discussion).\footnote{That a semantic property is a prerequisite casts doubts on pragmatic, rather than semantic,  treatments of the CSC as in \cite{kubota2015coordinate}.} Thus the formulation in \ref{CSCform} could be restricted to symmetric coordination, precisely because it's very symmetry is at the core of the requirement of `equal treatment' of the conjuncts.
+
+Finally, note that we have not discussed  head movement. How to model head movement is controversial. What matters here is whether it could have interpretive effects. If not, it is predicted to be able to always violate the (classical) CSC. If yes, as some authors (e.g. \citealp{lechner2006interpretive}, \citealp{Roberts:2010}, \citealp{harizanov2019whither}) argue, the prediction of the present account, to be verified, is that these interpretive effects should not arise when head movement violates the  (classical) CSC (see below for one possible case).
+
+\section{The Conjunct Constraint}\label{cscbsection}
+
+We now briefly return to clause CSCb in \ref{cscb}, the Conjunct constraint, prohibiting movement of one of the conjuncts, for example as in:
+\ex. \a. * We know the people  who$_i$ Henry wanted to meet [$_{DP}$ t$_i$ ] and [$_{DP}$ friends of t$_i$/James ]
+\b. * We know the people  who$_i$ Henry wrote to [$_{DP}$ t$_i$ ] and [$_{DP}$  t$_i$/James ]
+\b. * We know the people who$_i$ Henry wrote to  [$_{DP}$  t$_i$/James ] and [$_{DP}$ t$_i$ ]
+
+
+In languages like English (or French), this constraint cannot be overtly violated. As shown, extraction of either conjunct is ill formed, and remarkably,  ATB extraction does not rescue such sentences from deviance, thus suggesting as previously argued  that \ref{csca} and \ref{cscb} are distinct constraints.  Reportedly, overt violations are fine in some other languages, cf.,  \cite{Oda:2021}, and references therein, but only involving extraction of the first conjunct. This raises questions as to how CSCb in \ref{cscb} applies. 
+First we may ask whether covert movement can violate the \ref{cscb} in English or French. The answer is negative. Consider:
+\ex. \ag. Quelqu'un {a emprunté} au moins deux  livres et au moins un magazine.\\
+ Someone borrowed at least two books and at least one magazines.\\
+
+It is possible for the subject to outscope the whole conjunction yielding {\it there is someone who borrowed at least two books and a magazine}. It is also possible for the whole conjunction to outscope the subject yielding {\it if there are at least two books and at least one magazine such that each of them has been borrowed by someone possibly different for each item}. For example for each of War and  Peace, Anna Karenina and Newsweek, there is a different borrower. What is not allowed however is split scope: the first conjunct cannot outscope the subject with the second conjunct remaining in the scope of the subject. If this were possible, it would yield the meaning: {\it there are two books, such that  for each of them x, a different person borrowed x and at least one possibly different magazine}. That is, in a situation where Anna borrowed War and Peace and Newsweek, and Elsa borrowed Anna Karenina and The Economist, this sentence would be judged true if this reading was available. But it is not.\\
+This means that at least in English and French, clause CSCb must hold of covert movement, at LF, as well as of overt movement.
+
+Interestingly the covert movement prohibition appears to hold at least in some Serbian varieties that may allow overt violations of CSCb (the exact status and analysis of the b examples below is debated, hence the ? rating, but to the extent they are acceptable, they do not allow split scope).\footnote{Thanks to Boban Arsenijevic and to Milica Denic for their input here.} Thus consider the following examples: 
+\ex. \ag.  Neko je kupio makar tri knjige i makar sedam filmova\\
+Somebody aux buy-past-part at-least 3 books and at-least 7 movies\\
+\bg.  ? Makar tri knjige je neko i makar sedam filmova kupio\\
+at-least 3 books aux somebody and at least 7 movies buy-past-part\\
+'Somebody bought at least three books and at least seven movies.'
+
+We find that the same readings are permitted and excluded as in English and French:\\
+The following reading is fine for both examples: {\it somebody $>$ at least 3 books and at least 7 movies.}\\
+And so is this one:  {\it at least 3 books and at least 7 movies $>$ somebody}.\\
+But the `split scope' reading is not available for either: {\it * at least 3 books x are such that there is y who bought x and at least 7 movies.}\\ 
+Similarly:
+\ex. \ag. Ako Marko neki doma\'ci ili neki ispit ne uradi, pa\v{s}\'ce godinu\\
+if Marko some homework or some exam not does, fail-fut-3sg year\\
+\bg. ?Ako neki doma\'ci Marko ili neki ispit ne uradi, pa\v{s}\'ce godinu\\
+if some homework Marko or some exam not does, fail-fut-3sg year\\
+'If Marko doesn't do some of the homework assignments or some of the exams, he will fail the year'.
+
+The following reading is fine for both: {\it if $>$ some homework or some exam $>$ not}, that is,  he has to do all homework and all exams to not fail the year.\\
+So is this one: {\it if $>$ not $>$ some homework or some exam}, that is, he has to do at least some homework or at least some exam to not fail the year.\\
+But the following `split scope' reading is not available for either: If there is a homework assignment x, such that Marko doesn't do x or some of the exams, he will fail the year. (i.e., Marko has to do all homework assignments or some of the exams to not fail the year).\\
+
+Of course, these are preliminary data that would need to be more systematically investigated.  But we can tentatively  draw the following conclusions on their basis.
+\begin{enumerate}[noitemsep]
+\item First, clause CSCb in \ref{cscb} holds at LF. This parallels what we concluded for clause CSCa in \ref{csca}.\\  
+\item Second,  since QR of at least these quantifiers (such as {\it at least}) obey island constraints,\footnote{Not all do, or not all do in the same way. {\it each} is well known to be much freer than {\it every} or {\it at least}. As far as I know, why different quantifiers behave differently is not understood.} and in particular clause CSCa, the overt/covert difference between English and French on the one hand and Serbian (and possibly other South Slavic languages) if indeed there is one, on the other does not appear to be structural in nature. Rather it would be an overt/covert difference of the EPP type: English and French require an overt first conjunct, whereas Serbian may tolerate a silent first conjunct. 
+\end{enumerate}
+If first conjuncts can move overtly, a debated assumption as noted, the most general conclusion would be that a first conjunct can in principle always move, but only covertly in English and French. Furthermore, if it moves alone, it must mandatorily totally reconstruct.\footnote{A covert movement mandatorily reconstructing would differ from no movement at all in its ability to license e.g. agreement in a spec head configuration.}  If first conjunct movement is tolerated but must totally reconstruct, it would exemplify with A-bar movement a configuration similar to what is found with A-movement in Gapping and discussed earlier: overt movement with mandatory total reconstruction. 
+%
+%
+%Consider:
+%
+%\exg.  \label{cov}Au moins un satellite {a atteint} chaque {orbite cible} et sa {vitesse de croisière}\\
+%At least one satellite reached every {target orbit}  and its {cruising speed}\\
+%
+%Judgments are difficult, but this sentence seems to allow a reading whereby for each orbit x, at least one satellite t reached x and t's cruising speed. For this reading to be allowed, the first conjunct must outscope the subject, with the second conjunct remaining in the scope of the subject to allow its pronoun to be bound as shown. This means that QR, which we did show earlier does obey \ref{csca}, can violate \ref{cscb}. The difference between languages would thus not be a matter of structural differences but an overt /covert difference. How exactly to capture this variation thus remains an unsettled question. Assume for now some arbitrary property akin to the EPP property: English and French {\it and} has an EPP feature mandating the presence of an overt first conjunct, which languages violating \ref{cscb} lack.\\
+Note finally that no language is reported to allow violations of clause CSCb in \ref{cscb} by overtly extracting the second conjunct, a prohibition requiring a different explanation but puzzingly similar to what is observed with respect to clause CSCa: in the latter, extraction from the second conjunct binding a pronoun inside the first conjunct is ill formed, even if  it meets condition \ref{CSCform} and movement is of a kind not triggering Weak Crossover effects.  
+%This effect is duplicated with covert movement. Thus, the variant of \ref{cov} is judged much worse, under the intended redaing:
+%\exg.  Au moins un satellite {a atteint}  sa {vitesse de croisière} et chaque {orbite cible}\\
+%At least one satellite reached  its {cruising speed} and every {target orbit}\\
+%
+   
+%Existing literature on languages allowing violations of the Conjunct Constraint, does not, as far as we can tell, control for how the extracted element is interpreted. Nor does it control for whether  covert movement is subject to the conjunct constraint. 
+%\ex. \label{ecm2} If at least one waitress heard  every waiter and a guest she waited on  disparage her ...
+%si au moins une serveuse a entendu chaque serveur et un client qu'elle a servi la critiquer
+%
+%au moins un verre s'est cassé dans chaque caisse et dans sa boite 
+%au moins un avion s'est écrasé dans chaque pays 
+% un soldat différent surveille chaque entrée et les gens autour de lui
+%
+%Can such a sentence have the inverse scope reading: `if it is the case that for every male doctor, there is at least one female nurse (possibly different for each doctor) who heard this doctor and a patient (possibly different for each doctor) disparage her \ldots'.
+%
+
+
+\section{Consequences}
+
+\paragraph{Binding:} Some authors (\citealp{Kayne:2002}, \citealp{drummond2011minimalist}, \citealp{charnavelsportiche:2022,charnavelsportiche:2021a,charnavelsportiche:2023a}) have argued that the relation between an anaphor and is antecedent is one of movement of, or from, inside the anaphor.  Examine first the case of  movement of a constituent smaller than a whole conjunct. If it is movement, it must be allowed to violate the CSC as a constraint on movement:
+\ex. \linkto{The Orsay museum$_k$} \under sells replicas [ [of the Louvre] ] and [of itself \from t$_k$ ] ] 
+
+Would a derivation involving movement  violates the CSC \ref{csca} as a constraint on interpretation?  The answer is negative.\\
+The components given by the formulation of the CSC in \ref{CSCF} would be:
+
+\ex. \a. The Orsay museum$_k$ sells replicas of the Louvre 
+\b. The Orsay museum$_k$  sells replicas of [ itself t$_k$  ] 
+
+Both are well formed.  Precisely because such a derivation would involve movement of the DP {\it the Orsay museum} to a $\theta$-position, this DP is able, but, crucially, is not required, to bind anything (unlike in standard A-movement, where binding of a trace is needed to get a $\theta$-role).\\
+Consider next the case of movement of an anaphor being a whole conjunct:
+\ex. \linkto{The Orsay museum$_k$} \under sells replicas of [ [\from itself$_k$ ] and [ the Louvre ]]
+
+Whether this violates the CSC, here CSCb, would depend on the particular of the analysis but if movement is required for `formal' reasons only, we would be dealing with covert movement totally reconstructing, which would not violate \ref{cscb}. This said, anaphors are not restricted to appear as the first conjunct. Inverting {\it the Louvre} and {\it itself} above preserves well formedness. If totally reconstructing covert movement of the second conjunct (or more generally of conjuncts that are not first) were prohibited (as it may well be), this would constitute an argument against the assumption that the whole anaphor moves in movement approaches to anaphor binding, but not to movement approaches in general.
+ 
+Now, some analyses (\citealp{Anagnostopoulou:1999a}, \citealp{spathas:2010}, \citealp{lechner:2012}, \citealp{patel2013principle}, \citealp{sauerland2013presuppositions}) invoke {\it self}-movement for reflexive binding, a potential case of head movement, as e.g. in:
+\ex. \a. John$_i$ hurt him$_i$self $\rightarrow$ 
+\b. John$_i$ self-hurt him$_i$
+
+ which affects the meaning of the verb by turning it into a reflexive verb (roughly turning a dyadic $\lambda x. \lambda y. P(x,y)$ into a monadic $\lambda x. P(x,x)$). This meaning changing movement predicts, wrongly, that such sentences as {\it The hammer$_k$ damaged [ the nail and itself$_k$} ] should be ill formed as LF violations of the CSC (that is of \ref{csca}, as this would be extraction from inside a conjunct). Some assumption must therefore be wrong: one possibility could be that such sentences do not have to involve {\it self} movement (although this undermines the appeal to such movement in the first place); the other is that {\it self} movement is simply not an option, as \citealp{angelopoulos2023treating} or \citealp{sportiche:2022} conclude.
+
+\paragraph{Control:} It should be clear that exactly the same reasoning makes \citeauthor{Hornstein:1999}'s \citeyear{Hornstein:1999} analysis of Obligatory Control as movement immune to the CSC. Returning to example \ref{control}, its components are as given, and both well formed:\footnote{Note incidentally that this is true even if movement completely vacates one of the conjuncts (see footnote \ref{vac}). This would also hold in the binding case above if, as argue, the reflexive is the trace (as opposed to containing the trace of) of its antecedent. }
+
+\ex. \linkto Mary \under {wants} [ [ \from PRO {to win} ] and [ John {to lose} ] ] 
+\a. Mary {wants} [ PRO {to win} ]
+\b. Mary {wants} {} John {to lose} ] 
+
+The CSC is thus not relevant to decide the feasibility of this approach to control.
+
+
+\paragraph{Clitic Doubling}  \cite{paparounas2023first} references a situation in Greek in which a clitic  here cl$^1_k$ doubles the first conjunct of a coordination of direct objects, here DP$_1$ as below:
+
+\ex. ... cl$^1$ ... [$_{DP}$ [$_{DP_1}$ X] and [$_{DP_2}$ Y] ] \label{cldbl}
+
+Would a movement approach to cliticization violate the CSC?\\
+Movement would either be of the clitic alone as in BigDP approaches (where the clitic forms a constituent [ cl DP] with the DP it doubles prior to moving), or would involve covert movement of DP$_1$  to an independently generated cl$^1_k$  ( \citealt{Sportiche1996}, \citealt{Angelopoulos2020}) as in \citealp{Angelopoulos:2019}. 
+%Given our conclusion that  the CSC (both CSCa in \ref{}csca} and CScb in \ref{cscb}) is an LF condition, whether the CSC is violated depends on how the resulting structure is interpreted.
+%
+%.  This would yield the following structure:%, with its components once total reconstruction has applied (as it would have to, else one component will be ill formed):  
+% 
+%\ex. \linkto{ [$_{DP_1}$ X]}  \under cl$^1$ ... [$_{DP}$ [$_{DP_1}$ \from t ] and [$_{DP_2}$ Y] ] \label{cldbl}
+%\a. ... cl$^1$ ...  [$_{DP_1}$ X] 
+% \b. ... cl$^1$ ... [$_{DP_2}$ Y] 
+% 
+%Would this violate the CSC as an LF condition, that is, are these interpretively well formed? It all depends on the status of the clitic. 
+If the clitic has some an interpretive property and does not (or cannot) totally reconstruct, ill formedness would be predicted. If the clitic  totally reconstructs at LF (as it could in a BigDP approach), no violation would ensue. Furthermore, \cite{Angelopoulos2020} argues that such clitics in Greek (or in French) do not contribute any semantics: they are probes agreeing with their goals the way T agrees with its goal which means that they are from an interpretive point of view invisible, even with some $\phi$ features or Case values specified. These would behave like the features on the verb {\it be} in the following French Gapping case, which translate the English examples \ref{101} with the same interpretation (requiring total reconstruction of the subject). They are well formed despite the mismatch in $\phi$ features:
+ 
+\exg. Ces propositions {ne peuvent pas} \^etre vraies et celle-ci \^etre fausse \label{mismatch}\\
+	these propositions can't-3$^{rd}$prs-plural be true and  {this one} be false\\
+\ag.   {ne peuvent pas} [ces propositions \^etre vraies] \\
+	can't-3$^{rd}$prs-plural [these propositions  be true] \\ 
+\bg.  {ne peuvent pas} [celle-ci \^etre fausse] \\
+	can't-3$^{rd}$prs-plural [{this one} be false] \\
+
+In sum, under either of these options, there would be no CSC violation.
+%In other words, these components would be interpretively well formed.\\
+%\footnote{Interestingly, there are cases of agreement which are interpreted, in the sense that the agreement configuration has to hold at LF. Interestiingly, in such cases, une moitié d'entre nous devons être loyaux et l'autre être déloyale} 
+%Under an approach such as that of  the clitic is generated high and, in clitic doubling, its associate DP raises to it covertly (see \citealp{Angelopoulos:2019}). This would be covert movement of a first conjunct which escapes the conjunct condition \ref{cscb}. The fact that only the first conjunct can be so doubled is consistent with what is observed in violations of \ref{cscb}.
+
+This means that an argument against movement being involved with Clitic Doubling based on putative CSC violations is not convincing, for now. Nor is  the particular argument against big DP approach to the syntax of clitics in \cite{Angelopoulos2020} referenced on page \pageref{AnSpo}. In fact, the observation that such clitic doubling can only target the first conjunct parallels the behavior of overt conjunct movement in South Slavic, which can only target the first conjunct.\\
+Interestingly,  \cite{Angelopoulos2020} leaves open the status of Dative clitics, mentioning that they may have interpretive import (e.g. possibly animacy, or inducing affectedness on their associate). If they do, the expectation would be that one of the corresponding components in a situation like \ref{cldbl} would be ill-formed. Preliminary consultations with native speakers of Greek suggest this is a correct prediction. This would fall out under the approach in \cite{Sportiche1996}; it would also under a BigDP approach if it can be shown that the clitic cannot totally reconstruct.
+ 
+\paragraph{Other Remarks} First, that movement can violate the CSC has implications for certain formalisms treating coordination, and the CSC in terms of unification of features. To preserve a unification approach, they will have to treat traces (or their equivalent) and bound pronouns in similar ways. \\
+Second, if the CSC can be violated by A-bar or A-movement, deviance appearing to be tied to violations of the CSC by movement alone, if there are some, will raise challenging analytical questions. 
+
+%\paragraph{Agree:} There is a debate about the syntactic configuration under which agreement is triggered. S/Users/ds/Desktop/impots 2023 USome (e.g. \cite{koopman:2005a}) defend the idea that agreement is only triggered in a spec/head configurations, while others (e.g. \cite{Chomsky:2001a}) propose that a probe can agree with a goal it c-commands. Perhaps the strongest argument for the latter position comes from configurations of first conjunct agreement, a relatively common phenomenon, very much resembling the clitic doubling configurations above.
+%
+%\ex. ... \linkto Probe \under .. [$_{DP}$ [$_{DP_1}$ \from Goal ] and [$_{DP_2}$ Y ] ]
+%
+%An analysis in terms of covert ellipsis or coordinated clauses with a repeated (but elided) probe  ({\it Probe... DP$_1$ and \sout{Probe}... DP$_2$} as in \cite{Aoun:1994} appearing not to always available, a spec head approach to agreement would require DP$_1$ to raise to the spec of Probe to license agreement. But this would violate the CSC as a constraint on movement. 
+%
+
+
+\bibliography{/Users/ds/Cloud/OneDrive/Latex/texmf/bibtex/master}
+\end{document}
+
